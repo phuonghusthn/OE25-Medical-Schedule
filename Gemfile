@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
@@ -21,8 +19,8 @@ gem "webpacker", "~> 4.0"
 
 group :development, :test do
   gem "byebug", platforms: %i(mri mingw x64_mingw)
-  gem "rubocop", "~> 0.74.0", require: false
-  gem "rubocop-rails", "~> 2.3.2", require: false
+  gem "rubocop", require: false
+  gem "rubocop-rails", require: false
 end
 
 group :development do

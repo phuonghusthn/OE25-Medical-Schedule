@@ -56,7 +56,7 @@ Layout/AlignArray:
                  one line.
   Enabled: false
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Description: "Checks for %q/%Q when single quotes or double quotes would do."
   Enabled: false
 
