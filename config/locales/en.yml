@@ -1,2 +1,47 @@
 en:
-  hello: "Hello world"
+  hello: Hello world
+  app_name: Medical Schedule
+  welcome_app: Welcome to our Medical Schedule App!
+  contact: Contact us
+  phone: + 8435330333
+  email: yennguyen26101998@gmail.com
+  address: Ha Noi, Viet Nam
+  services: Services link
+  apointment: Apointment
+  doctor: Doctor
+  language: Language
+  home: Home
+  doctor_list: Doctors List
+  doctor_details: Doctor Details
+  about: About
+  login: Login
+  signup: Signup
+  decription: Alongside Rouhani Referring to the marginalisation of life reformists after the disputed presidential vote then.
+  emergency_cases: Emergency cases
+  emergency_decription: If you need to call an ambulance, we are always here.
+  call_us: Call us
+  emergency: (062) 109-9222
+  apointment_decription: You need to see a doctor to check your health, book an appointment online here
+  doctor_timetables: Doctor Timetables
+  calender: Calender
+  calender_decription: Doctor can check their apointments here after login.
+  working_time: Working Time
+  mon_fri: Mon - Fri 08:00am - 10:00pm
+  sat: Saturday - 10:00am - 07:00pm
+  sun: Sunday - Emergency Only
+  mon: Monday - 8:00 AM – 10:00 pm
+  tue: Tuesday - 8:00 AM – 7:00 pm
+  ambulance_service: Ambulance 24/7 Service
+  copy_right: ©2018 Medical Schedule.All Rights Reserved. Designed by
+  news: Latest News
+  new_1_title: Your Medical Records are Safe
+  new_1_time: 21 Octobar 2017
+  new_1_content: Clicking sounds were generted size of cig arette smoke particles chemical compositions
+  total_staff: 108
+  staff: Our staff
+  total_experience: 20
+  experience: Years of experience
+  total_smiler: 1450
+  smiler: Happy smiler
+  total_blood: 646
+  blood_donate: Blood Donate
