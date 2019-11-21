@@ -10,6 +10,7 @@
     "i18n-js": "^3.5.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
+    "admin-lte": "^3.0.0",
     "rails-erb-loader": "^5.5.2",
     "turbolinks": "^5.2.0"
   },

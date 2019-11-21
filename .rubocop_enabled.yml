@@ -540,6 +540,7 @@ Style/UnlessElse:
   Enabled: true
 
 Style/RedundantCapitalW:
+Style/UnneededCapitalW:
   Description: "Checks for %W when interpolation is not needed."
   Enabled: true
 

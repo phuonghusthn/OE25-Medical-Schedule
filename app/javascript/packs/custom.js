@@ -10,3 +10,5 @@ $(document).ready(function() {
     $('.owl-carousel').owlCarousel('destroy');
   });
 });
+
+jQuery.fn.load = function(callback){ $(window).on("load", callback) };

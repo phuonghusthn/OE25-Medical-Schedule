@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= full_title yield(:title) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag Settings.http_ionicframework %>
+  <%= stylesheet_link_tag Settings.https_googleapis %>
+  <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track": "reload" %>
+  <%= javascript_pack_tag "admin", "data-turbolinks-track": "reload" %>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <%= render "layouts_admin/navbar_admin" %>
+    <%= render "layouts_admin/main_slidebar"%>
+    <div class="content-wrapper">
+      <%= render "layouts_admin/admin_header"%>
+      <section  class="content">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <%= yield %>
+      </section>
+    </div>
+    <%= render "layouts_admin/admin_footer" %>
+    <aside class="control-sidebar control-sidebar-dark">
+    </aside>
+  </div>
+</body>
+</html>
