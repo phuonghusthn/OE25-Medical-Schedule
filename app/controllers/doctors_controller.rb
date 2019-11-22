@@ -5,6 +5,10 @@ class DoctorsController < ApplicationController
     @doctors = Doctor.page(params[:page]).per Settings.page_size
   end
 
+  def new
+    @doctor = Doctor.new
+  end
+
   def create; end
 
   def show; end

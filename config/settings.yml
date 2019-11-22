@@ -6,5 +6,7 @@ valid_email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
 max_user_name: 50
 max_email: 255
 min_pass: 6
+max_phone: 10
 session_params: "1"
 page_size: 12
+doctor_pages: 5
