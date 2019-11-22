@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     get "/signup", to: "patients#new"
     get "/signin", to: "sessions#new"
     post "/signin", to: "sessions#create"
+    get "/doctor", to: "doctors#index"
 
     resources :patients
+    resources :admin
+    resources :doctors, only: %i(show edit new)
   end
 end

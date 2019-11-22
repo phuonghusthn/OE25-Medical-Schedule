@@ -12,3 +12,5 @@ $(document).ready(function() {
 });
 
 jQuery.fn.load = function(callback){ $(window).on("load", callback) };
+
+$.widget.bridge('uibutton', $.ui.button)

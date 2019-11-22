@@ -1,0 +1,40 @@
+<% provide :title, t("doctor") %>
+<div class="card">
+  <div class="card-header">
+    <h1 class="card-title color-list">
+      <%= t "doctor_list"%>
+    </h1>
+    <%= link_to t("create_account"), new_doctor_path , class: "create-account" %>
+  </div>
+  <div class="card-body">
+    <table id="example2" class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th><%= t "stt" %></th>
+        <th><%= t "id" %></th>
+        <th><%= t "name" %></th>
+        <th><%= t "position" %></th>
+        <th><%= t "academy" %></th>
+        <th><%= t "experience" %></th>
+        <th><%= t "room" %></th>
+        <th class="action-head"><%= t "action" %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <button type="button" class="btn btn-primary btn-size"><%= t "edit" %></button>
+          <button type="button" class="btn btn-danger btn-size"><%= t "delete" %></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
