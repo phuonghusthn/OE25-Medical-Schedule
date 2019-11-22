@@ -731,7 +731,7 @@ a.read_btn,
     z-index: 1;
     color: #fff;
     outline: 2px solid #fff;
-    padding: 60px 17px 119px 20px;
+    padding: 70px;
     outline-offset: -10px;
 }
 
@@ -5275,6 +5275,7 @@ footer {
 
 .single_cbox {
     background-color: aliceblue;
+    height: 250px;
 }
 /*
 -------------------------------------------------------------------------

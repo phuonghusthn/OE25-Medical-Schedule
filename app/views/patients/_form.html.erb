@@ -1,0 +1,17 @@
+<%= form_for @patient do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label t("user_name") %>
+  <%= f.text_field :user_name, class: "form-control space" %>
+
+  <%= f.label t("mail") %>
+  <%= f.email_field :email, class: "form-control space" %>
+
+  <%= f.label t("pass") %>
+  <%= f.password_field :password, class: "form-control space" %>
+
+  <%= f.label t("pass_confirm") %>
+  <%= f.password_field :password_confirmation, class: "form-control space" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary space" %>
+<% end %>

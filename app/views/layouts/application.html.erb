@@ -16,12 +16,15 @@
     <%= render "layouts/header" %>
 
     <div>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
+      <div class="container">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+      </div>
       <%= yield %>
-      <%= render "layouts/footer" %>
     </div>
+
+    <%= render "layouts/footer" %>
   </body>
 
   <script type="text/javascript">

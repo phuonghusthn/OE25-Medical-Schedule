@@ -6,4 +6,6 @@ class User < ApplicationRecord
       %w(Doctor Patient Staff)
     end
   end
+
+  has_secure_password
 end
