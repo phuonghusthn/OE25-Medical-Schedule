@@ -1,43 +1,43 @@
 module SessionsHelper
-  def log_in patient
-    session[:patient_id] = patient.id
+  def log_in user
+    session[:user_id] = user.id
   end
 
-  def remember patient
-    patient.remember
-    cookies.permanent.signed[:patient_id] = patient.id
-    cookies.permanent[:remember_token] = patient.remember_token
+  def remember user
+    user.remember
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent[:remember_token] = user.remember_token
   end
 
-  def current_patient
-    if patient_id = session[:patient_id]
-      @current_patient ||= Patient.find_by id: patient_id
-    elsif patient_id = cookies.signed[:patient_id]
-      patient = Patient.find_by id: patient_id
-      if patient&.authenticated?(:remember, cookies[:remember_token])
-        log_in patient
-        @current_patient = patient
+  def current_user
+    if user_id = session[:user_id]
+      @current_user ||= User.find_by id: user_id
+    elsif user_id = cookies.signed[:user_id]
+      user = User.find_by id: user_id
+      if user&.authenticated?(:remember, cookies[:remember_token])
+        log_in user
+        @current_user = user
       end
     end
   end
 
-  def current_patient? patient
-    patient&.== current_patient
+  def current_user? user
+    user&.== current_user
   end
 
   def logged_in?
-    current_patient.present?
+    current_user.present?
   end
 
-  def forget patient
-    patient.forget
-    cookies.delete :patient_id
+  def forget user
+    user.forget
+    cookies.delete :user_id
     cookies.delete :remember_token
   end
 
   def log_out
-    forget current_patient
-    session.delete :patient_id
-    @current_patient = nil
+    forget current_user
+    session.delete :user_id
+    @current_user = nil
   end
 end

@@ -4,22 +4,30 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    if @patient.authenticate params[:session][:password]
-      log_in patient
-      redirect_to patient
+    if @user.authenticate params[:session][:password]
+      log_in @user
+      if params[:session][:remember_me] == Settings.session_params
+        remember @user
+      else
+        forget @user
+      end
+      redirect_to @user
     else
       flash.now[:danger] = t "invalid"
       render :new
     end
   end
 
-  def destroy; end
+  def destroy
+    log_out if logged_in?
+    redirect_to root_url
+  end
 
   private
 
   def session_params
-    @patient = Patient.find_by email: params[:session][:email].downcase
-    return if @patient
+    @user = User.find_by email: params[:session][:email].downcase
+    return if @user
 
     flash.now[:danger] = t "invalid"
     render :new

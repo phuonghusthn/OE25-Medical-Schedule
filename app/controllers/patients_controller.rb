@@ -10,12 +10,15 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new patient_params
     if @patient.save
+      log_in @patient
       flash[:success] = t "welcome_app"
       redirect_to @patient
     else
       render :new
     end
   end
+
+  def edit; end
 
   private
 
