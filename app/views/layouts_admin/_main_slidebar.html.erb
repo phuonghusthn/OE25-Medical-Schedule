@@ -1,0 +1,57 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <%= image_tag "AdminLTELogo", class: "img-circle elevation-2", alt: "" %>
+      </div>
+      <div class="info">
+        <%= link_to t("user_name"), "#" , :class => "d-block" %>
+      </div>
+    </div>
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item has-treeview">
+          <%= link_to "#", class: "nav-link" do %>
+            <i class="nav-icon fas fa-table"></i>
+            <p>
+              <%= t " manager_user" %>
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          <% end %>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <%= link_to doctor_path, :class => "nav-link" do %>
+                 <i class="far fa-circle nav-icon"></i>
+                <%= t "manager_doctor" %>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "#" , class: "nav-link" do %>
+                <i class="far fa-circle nav-icon"></i>
+                <p><%= t "manager_staff" %></p>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "#" , class: "nav-link" do %>
+                <i class="far fa-circle nav-icon"></i>
+                <p><%= t "manager_patient" %></p>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+         <li class="nav-item">
+          <%= link_to "#", class: "nav-link" do %>
+            <i class="nav-icon fas fa-book"></i>
+            <p><%= t "appointment" %></p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "#" , class: "nav-link" do %>
+            <i class="nav-icon fas fa-book"></i>
+            <p><%= t "news" %></p>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

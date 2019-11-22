@@ -89,3 +89,8 @@ en:
   staff: Staff
   patient: Patient
   appointment: Apointment
+  number_doctor: 150
+  number_staff: 120
+  number_patient: 200
+  number_appointment: 150
+  search: Search
