@@ -9,13 +9,14 @@ en:
   services: Services link
   apointment: Apointment
   doctor: Doctor
+  patient: Patient
   language: Language
   home: Home
   doctor_list: Doctors List
   doctor_details: Doctor Details
-  about: About
-  login: Login
-  signup: Signup
+  about: About us
+  signin: Sign in
+  signup: Sign up
   decription: Alongside Rouhani Referring to the marginalisation of life reformists after the disputed presidential vote then.
   emergency_cases: Emergency cases
   emergency_decription: If you need to call an ambulance, we are always here.
@@ -45,3 +46,14 @@ en:
   smiler: Happy smiler
   total_blood: 646
   blood_donate: Blood Donate
+  create_account: Create a new account
+  user_name: User name
+  mail: Email
+  pass: Password
+  pass_confirm: Password confirmation
+  new_user: You are new user?
+  signup_now: Sign up now!
+  remember: remember
+  remember_me: Remember me on this computer
+  invalid: Invalid email/password combination
+  not_found: User not found

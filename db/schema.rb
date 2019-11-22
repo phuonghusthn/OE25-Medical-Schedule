@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_14_071918) do
+ActiveRecord::Schema.define(version: 2019_11_21_020145) do
 
   create_table "appointments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "patient_id"
@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(version: 2019_11_14_071918) do
     t.string "user_name"
     t.string "email"
     t.string "address"
-    t.string "string"
     t.integer "phone"
     t.string "role"
     t.string "academy"
@@ -82,6 +81,8 @@ ActiveRecord::Schema.define(version: 2019_11_14_071918) do
     t.integer "room"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
