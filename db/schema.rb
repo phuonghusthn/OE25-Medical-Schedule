@@ -10,10 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_020145) do
-
-  create_table "appointments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "patient_id"
+ActiveRecord::Schema.define(version: 2019_11_14_071918) do
+  create_table "appointments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|t.bigint "patient_id"
     t.bigint "doctor_id"
     t.integer "status"
     t.date "from_time"
@@ -23,8 +21,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_020145) do
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
-
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "commentable_type"
     t.bigint "commentable_id"
     t.bigint "patient_id"
@@ -35,14 +32,14 @@ ActiveRecord::Schema.define(version: 2019_11_21_020145) do
     t.index ["patient_id"], name: "index_comments_on_patient_id"
   end
 
-  create_table "medical_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "medical_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "patient_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["patient_id"], name: "index_medical_records_on_patient_id"
   end
 
-  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "staff_id"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
@@ -50,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_020145) do
     t.index ["staff_id"], name: "index_news_on_staff_id"
   end
 
-  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "patient_id"
     t.bigint "doctor_id"
     t.integer "point"
@@ -60,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_020145) do
     t.index ["patient_id"], name: "index_rates_on_patient_id"
   end
 
-  create_table "shift_works", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "shift_works", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "doctor_id"
     t.date "from_time"
     t.date "to_time"
@@ -69,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_020145) do
     t.index ["doctor_id"], name: "index_shift_works_on_doctor_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "user_name"
     t.string "email"
     t.string "address"

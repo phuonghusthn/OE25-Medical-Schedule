@@ -57,3 +57,35 @@ en:
   remember_me: Remember me on this computer
   invalid: Invalid email/password combination
   not_found: User not found
+  hello: "Hello world"
+  admin: Admin
+  create_doctor: Create doctor
+  manager_user: Manager Users
+  manager_doctor: Manager Doctor
+  manager_staff: Manager Staff
+  manager_patient: ManagerPatient
+  appointment: Appointment
+  new: News
+  user_name: User name
+  contact: Contact
+  home: Home
+  update: Update
+  doctor: Doctor
+  email: Email address
+  password: Password
+  password_confirmation: password confirmation
+  position: Position
+  room: Room
+  acadamy: Acadamy
+  experience: Experience
+  submit: Submit
+  hust: HUST
+  doctor_list: Doctor List
+  action: Action
+  edit: Edit
+  delete: Delete
+  doctor: Doctor
+  more_info: More info
+  staff: Staff
+  patient: Patient
+  appointment: Apointment

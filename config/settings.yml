@@ -4,3 +4,5 @@ max_user_name: 50
 max_email: 255
 min_pass: 6
 valid_email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+http_ionicframework: https://kit.fontawesome.com/a076d05399.js
+https_googleapis: https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700
