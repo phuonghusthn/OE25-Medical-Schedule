@@ -12,28 +12,27 @@
             <i class="zmdi zmdi-phone"></i><%= t "phone" %>
             <ul class="htr_language">
               <% if logged_in? %>
-                <li><%= link_to "Patients", '#' %></li>
                 <li class="dropdown">
                   <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
                     <%= t "account" %> <b class="caret"></b>
                   <% end %>
                   <ul class="dropdown-menu">
-                    <li><%= link_to t("profile"), current_patient %></li>
-                    <li><%= link_to t("settings"), edit_patient_path(current_patient) %></li>
+                    <li><%= link_to t("profile"), current_user %></li>
+                    <li><%= link_to t("settings"), edit_patient_path(current_user) %></li>
                     <li class="divider"></li>
                     <li>
-                      <%= link_to t("log_out"), logout_path, method: :delete %>
+                      <%= link_to t("signout"), signout_path, method: :delete %>
                     </li>
                   </ul>
                 </li>
               <% else %>
                 <li><b><%= link_to t("signin"), signin_path, class:"btn-signin btn" %></b></li>
               <% end %>
-              <li>
-                <%= link_to "#" do %>
-                  <i class="zmdi zmdi-caret-down"></i><%= t "language" %>
+              <li class="dropdown">
+                <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
+                  <%= t "language" %> <b class="caret"></b>
                 <% end %>
-                <ul>
+                <ul class="dropdown-menu">
                   <li><%= link_to "English", locale: "en" %></li>
                 </ul>
               </li>
@@ -55,14 +54,19 @@
           <nav class="menu_bar">
             <ul class="main_menu space-right">
               <li><%= link_to t("home"), home_path, data: {turbolinks: "false"} %></li>
-              <li><%= link_to t("apointment"), "#" %></li>
+              <li><%= link_to t("apointment"), "#" %>
+                <ul>
+                  <li><%= link_to t("doctor_list"), "#" %></li>
+                  <li><%= link_to t("doctor_details"), "#" %></li>
+                </ul>
+              </li>
               <li><%= link_to t("doctor"), "#" %>
                 <ul>
                   <li><%= link_to t("doctor_list"), "#" %></li>
                   <li><%= link_to t("doctor_details"), "#" %></li>
                 </ul>
               </li>
-              <li><%= link_to t("patient"), "#" %></li>
+              <li><%= link_to t("patient"), "#", data: {turbolinks: "false"} %></li>
               <li><%= link_to t("about"), about_path, data: {turbolinks: "false"} %></li>
             </ul>
             <form action="#" class="search_form">

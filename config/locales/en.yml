@@ -1,5 +1,6 @@
 en:
   hello: Hello world
+  en: English
   app_name: Medical Schedule
   welcome_app: Welcome to our Medical Schedule App!
   contact: Contact us
@@ -57,7 +58,6 @@ en:
   remember_me: Remember me on this computer
   invalid: Invalid email/password combination
   not_found: User not found
-  hello: "Hello world"
   admin: Admin
   create_doctor: Create doctor
   manager_user: Manager Users
@@ -94,3 +94,5 @@ en:
   number_patient: 200
   number_appointment: 150
   search: Search
+  signout: Sign out
+  account: My account

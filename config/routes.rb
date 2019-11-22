@@ -4,10 +4,13 @@ Rails.application.routes.draw do
 
     get "/home", to: "static_pages#home"
     get "/about", to: "static_pages#about"
+
+    get "/doctor", to: "doctors#index"
+
     get "/signup", to: "patients#new"
     get "/signin", to: "sessions#new"
     post "/signin", to: "sessions#create"
-    get "/doctor", to: "doctors#index"
+    delete "/signout", to: "sessions#destroy"
 
     resources :patients
     resources :admin
