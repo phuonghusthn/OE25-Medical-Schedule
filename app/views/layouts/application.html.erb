@@ -15,6 +15,10 @@
   <body>
     <%= render "layouts/header" %>
 
+    <% if check_auth_controller? %>
+      <%= render "layouts/auth_header" %>
+    <% end %>
+
     <div>
       <div class="container">
         <% flash.each do |message_type, message| %>

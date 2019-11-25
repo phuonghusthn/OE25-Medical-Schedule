@@ -14,7 +14,7 @@ en:
   language: Language
   home: Home
   doctor_list: Doctors List
-  doctor_details: Doctor Details
+  doctor_detail: Doctor Detail
   about: About us
   signin: Sign in
   signup: Sign up
@@ -76,11 +76,12 @@ en:
   password_confirmation: password confirmation
   position: Position
   room: Room
-  acadamy: Acadamy
+  work_room: Work room
+  academy: Academy
   experience: Experience
+  department: Department
   submit: Submit
   hust: HUST
-  doctor_list: Doctor List
   action: Action
   edit: Edit
   delete: Delete
@@ -88,7 +89,6 @@ en:
   more_info: More info
   staff: Staff
   patient: Patient
-  appointment: Apointment
   number_doctor: 150
   number_staff: 120
   number_patient: 200
@@ -96,3 +96,4 @@ en:
   search: Search
   signout: Sign out
   account: My account
+  university: Student at Australian National University and the lead author of a paper published in Nature on Wednesday that may hold the answer. Mr. Jones and his colleagues developed a model that simulates what’s happening in our planet’s mantle beneat the crust that we live on, offering a window to the center of the.

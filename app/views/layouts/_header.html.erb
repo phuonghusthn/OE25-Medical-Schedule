@@ -60,11 +60,7 @@
                   <li><%= link_to t("doctor_details"), "#" %></li>
                 </ul>
               </li>
-              <li><%= link_to t("doctor"), "#" %>
-                <ul>
-                  <li><%= link_to t("doctor_list"), "#" %></li>
-                  <li><%= link_to t("doctor_details"), "#" %></li>
-                </ul>
+              <li><%= link_to t("doctor"), doctor_path %>
               </li>
               <li><%= link_to t("patient"), "#", data: {turbolinks: "false"} %></li>
               <li><%= link_to t("about"), about_path, data: {turbolinks: "false"} %></li>
