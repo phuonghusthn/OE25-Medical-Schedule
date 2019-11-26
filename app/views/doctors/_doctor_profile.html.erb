@@ -1,0 +1,26 @@
+<div class="col-md-5">
+  <div class="doctor_profile">
+    <%= image_tag @doctor.image %>
+    <h5 class="centered"><%= @doctor.full_name %></h5>
+    <ul class="doctor_data">
+      <li>
+        <h4><%= t "position" %>:</h4> <%= @doctor.position %>
+      </li>
+      <li>
+        <h4><%= t "department" %>:</h4> <%= @doctor.department %>
+      </li>
+      <li>
+        <h4><%= t "experience" %>:</h4> <%= @doctor.experience %>
+      </li>
+      <li>
+        <h4><%= t "work_room" %>:</h4> <%= @doctor.room %>
+      </li>
+    </ul>
+    <div class="doctor_contact">
+      <div class="single_contact">
+        <strong><%= t "email" %>:</strong>
+        <%= link_to @doctor.email, Settings.mail_link %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,7 @@ class User < ApplicationRecord
   end
 
   has_secure_password
+  has_one_attached :image
 
   class << self
     def digest string

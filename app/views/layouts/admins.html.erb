@@ -7,23 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag Settings.http_ionicframework %>
   <%= stylesheet_link_tag Settings.https_googleapis %>
-  <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track": "reload" %>
-  <%= javascript_pack_tag "admin", "data-turbolinks-track": "reload" %>
+  <%= stylesheet_link_tag "admins", media: "all", "data-turbolinks-track": "reload" %>
+  <%= javascript_pack_tag "admins", "data-turbolinks-track": "reload" %>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-    <%= render "layouts_admin/navbar_admin" %>
-    <%= render "layouts_admin/main_slidebar"%>
+    <%= render "layouts_admins/navbar_admins" %>
+    <%= render "layouts_admins/main_slidebar"%>
     <div class="content-wrapper">
-      <%= render "layouts_admin/admin_header"%>
-      <section  class="content">
-        <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
-        <% end %>
-        <%= yield %>
-      </section>
+      <%= render "layouts_admins/admins_header"%>
+      <%= render "shared/flash_messages" %>
     </div>
-    <%= render "layouts_admin/admin_footer" %>
+    <%= render "layouts_admins/admins_footer" %>
     <aside class="control-sidebar control-sidebar-dark">
     </aside>
   </div>
