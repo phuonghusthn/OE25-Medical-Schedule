@@ -2,12 +2,12 @@ class DoctorsController < ApplicationController
   before_action :load_doctor, only: :show
 
   def index
-    if params[:search].blank?
-      @doctors = Doctor.page(params[:page]).per Settings.page_size
-    else
-      @doctors = Doctor.search_by_name(params[:search])
+    @doctors = if params[:search].blank?
+                 Doctor.page(params[:page]).per Settings.page_size
+               else
+                 Doctor.search_by_name(params[:search])
                        .page(params[:page]).per Settings.page_size
-    end
+               end
   end
 
   def new

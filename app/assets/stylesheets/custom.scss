@@ -103,7 +103,7 @@ p {
 
 .search_form {
   input {
-    margin-left: 10px !important;
+    margin-left: 20px !important;
   }
 }
 
@@ -194,4 +194,9 @@ p {
 
 .red-color {
   color: $red;
+}
+
+.left_float {
+  float: left;
+  width: auto;
 }
