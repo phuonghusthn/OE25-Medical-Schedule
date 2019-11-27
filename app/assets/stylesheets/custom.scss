@@ -22,7 +22,7 @@ input, textarea, select, .uneditable-input {
 }
 
 input {
-  height: auto !important;
+  height: none !important;
 }
 
 #error_explanation {
@@ -44,6 +44,9 @@ input {
   font-size: 25px !important;
   width: 30px;
   margin-top: 3px;
+}
+.message-nice {
+  padding-top: 20px;
 }
 
 .space-right {
@@ -160,4 +163,31 @@ p {
 
 .centered {
   text-align: center;
+}
+
+.select-be {
+  border: none;
+  height: 58px;
+  color: $gray-char;
+}
+
+.height-input {
+  height: 58px !important;
+}
+
+.p-record {
+  margin-left: 12px;
+}
+
+.padding-message{
+  margin-top: 10px;
+}
+
+.btn-submit {
+  width: 10px !important;
+  background-color: $color-submit !important;
+}
+
+.height-input-second {
+  height: 50px !important;
 }

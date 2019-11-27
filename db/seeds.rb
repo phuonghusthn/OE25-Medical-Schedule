@@ -23,3 +23,9 @@ d.save
     filename: "default_doctor.jpg"
   d.save
 end
+
+8.times do |n|
+    ShiftWork.create!(doctor_id: 1,
+    from_time: Faker::Time.forward(days: 3, period: :day),
+    to_time: Faker::Time.forward(days: 3, period: :day))
+end

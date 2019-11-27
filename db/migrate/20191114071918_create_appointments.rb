@@ -4,8 +4,11 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.references :patient
       t.references :doctor
       t.integer :status
-      t.date :from_time
-      t.date :to_time
+      t.datetime :from_time
+      t.datetime :to_time
+      t.string :phone_patient
+      t.string :address_patient
+      t.text :message
 
       t.timestamps
     end

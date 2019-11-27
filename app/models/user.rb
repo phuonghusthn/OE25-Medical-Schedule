@@ -4,6 +4,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token
 
   VALID_EMAIL_REGEX = Settings.valid_email_regex
+  VALID_PHONE_REGEX = Settings.valid_phone_regex
 
   before_save :downcase_email
 
