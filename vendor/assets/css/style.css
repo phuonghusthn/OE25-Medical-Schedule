@@ -422,6 +422,7 @@ ul.main_menu>li:hover>ul {
 }
 
 .search_form button {
+    margin-top: auto;
     position: absolute;
     top: 0;
     font-size: 16px;

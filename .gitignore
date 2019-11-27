@@ -46,6 +46,7 @@ config/master.key
 /test/*
 /log/*
 /public/*
+/storage/*
 
 config/settings.local.yml
 config/settings/*.local.yml
@@ -53,4 +54,3 @@ config/environments/*.local.yml
 
 # Ignore application configuration
 /config/application.yml
-/storage/*
