@@ -4,7 +4,7 @@ en:
   app_name: Medical Schedule
   welcome_app: Welcome to our Medical Schedule App!
   contact: Contact us
-  phone: + 8435330333
+  phone_number: + 8435330333
   email: yennguyen26101998@gmail.com
   address: Ha Noi, Viet Nam
   services: Services link
@@ -110,8 +110,9 @@ en:
   medical_record: Medical record
   appointment_time: Appointment time
   full_name: Fullname
-  phone_number: Phone number
   from_time: From time
   to_time: To time
   message: Message
   day: Day
+  no_result: No result!
+  search_result: Search result
