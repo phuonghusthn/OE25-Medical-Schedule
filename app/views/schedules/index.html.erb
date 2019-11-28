@@ -3,7 +3,8 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div id="calendar"></div>
+        <%= content_tag "div", id: "calendar", data: {schedule: load_schedule } do %>
+        <% end %>
       </div>
     </div>
   </div>

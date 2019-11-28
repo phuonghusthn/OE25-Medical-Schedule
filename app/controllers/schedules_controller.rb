@@ -1,3 +1,5 @@
 class SchedulesController < ApplicationController
-  def index; end
+  def index
+    @appointment = current_user.appointments
+  end
 end
