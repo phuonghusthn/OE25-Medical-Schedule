@@ -121,3 +121,8 @@ en:
   appointment_not_created: Appointment not created
   must_be_a_valid_file_format: must be a valid file format
   should_be_less_than_5MB: should be less than 5MB
+  edit_profile: Edit profile
+  save_changes: Save changes
+  update_your_profile: Update your profile
+  profile_updated: Profile update
+  not_success: Not update success
