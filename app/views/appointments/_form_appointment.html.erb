@@ -1,9 +1,11 @@
 <div class="contact_form">
   <%= form_for @appointment do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
     <div class="row">
       <div class="col-lg-6 col-md-12">
         <%= f.label t "full_name" %>
-        <%= f.text_field :full_name, value: current_user.full_name if current_user %>
+        <%= f.text_field :full_name, class: "height-input-second",
+          disabled: true, value: current_user.full_name if current_user %>
       </div>
       <div class="col-lg-6 col-md-12">
         <%= f.label t "phone" %>
@@ -13,7 +15,8 @@
     <div class="row">
       <div class="col-md-12">
         <%= f.label t "email" %>
-        <%= f.email_field :email_patient, value: current_user.email if current_user %>
+        <%= f.email_field :email_patient, class: "height-input-second",
+          disabled: true, value: current_user.email if current_user %>
       </div>
     </div>
     <div class="row">
@@ -43,19 +46,19 @@
       </div>
       <div class="col-lg-3 col-md-12">
         <%= f.label t "to_time" %>
-        <%= f.select :from_time, to_time_all,
+        <%= f.select :to_time, to_time_all,
           {}, class: "select-be height-input-second" %>
       </div>
     </div>
     <div class="row padding-message">
       <div class="col col-md-12 message-nice">
-        <%= f.text_field :message, placeholder: t("message") %>
+        <%= f.text_area :message, placeholder: t("message") %>
       </div>
     </div>
     <div class="row">
       <p class="p-record" ><%= t "medical_record" %>:</p>
       <div class="col col-md-12">
-        <%= f.file_field :medical_record %>
+        <%= f.file_field :medical_record, accept: Settings.type_file_accept %>
       </div>
     </div>
     <div class="row text">

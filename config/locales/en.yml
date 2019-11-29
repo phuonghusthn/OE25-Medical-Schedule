@@ -8,7 +8,7 @@ en:
   email: yennguyen26101998@gmail.com
   address: Ha Noi, Viet Nam
   services: Services link
-  apointment: Apointment
+  appointment: Appointment
   doctor: Doctor
   patient: Patient
   language: Language
@@ -26,7 +26,7 @@ en:
   apointment_decription: You need to see a doctor to check your health, book an appointment online here
   doctor_timetables: Doctor Timetables
   calender: Calender
-  calender_decription: Doctor can check their apointments here after login.
+  calender_decription: Doctor can check their appointments here after login.
   working_time: Working Time
   mon_fri: Mon - Fri 08:00am - 10:00pm
   sat: Saturday - 10:00am - 07:00pm
@@ -117,3 +117,7 @@ en:
   no_result: No result!
   search_result: Search result
   schedule: Doctor Schedules
+  appointment_created: Appointment created
+  appointment_not_created: Appointment not created
+  must_be_a_valid_file_format: must be a valid file format
+  should_be_less_than_5MB: should be less than 5MB
