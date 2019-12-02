@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
-  before_action :find_patient, only: :show
+  before_action :find_patient, only: %i(show edit update)
+  before_action :correct_patient, :logged_in_user, only: %i(edit update)
 
   def show; end
 
@@ -20,6 +21,16 @@ class PatientsController < ApplicationController
 
   def edit; end
 
+  def update
+    if @patient.update patient_params
+      flash[:success] = t "profile_updated"
+      redirect_to @patient
+    else
+      flash[:danger] = t "not_success"
+      render :edit
+    end
+  end
+
   private
 
   def patient_params
@@ -31,5 +42,9 @@ class PatientsController < ApplicationController
 
     flash[:danger] = t "not_found"
     redirect_to root_url
+  end
+
+  def correct_patient
+    redirect_to(root_url) unless current_user? @patient
   end
 end
