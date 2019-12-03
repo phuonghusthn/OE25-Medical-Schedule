@@ -126,3 +126,13 @@ en:
   update_your_profile: Update your profile
   profile_updated: Profile update
   not_success: Not update success
+  stt: STT
+  id: ID
+  doctor_name: Doctor name
+  patient_name: Patient name
+  appointment_list: Appointment list
+  accept: Accept
+  cancel: Cancel
+  start_time: Start time
+  end_time: End time
+  new_appointment: New appointment
