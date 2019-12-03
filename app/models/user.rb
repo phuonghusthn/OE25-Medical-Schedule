@@ -17,7 +17,13 @@ class User < ApplicationRecord
 
   class << self
     def roles
-      %w(Doctor Patient Staff)
+      %w(Admin Staff Doctor Patient)
+    end
+  end
+
+  %w(Admin Staff Doctor Patient).each do |klass|
+    define_method "#{klass.downcase}?" do
+      self.class.name == klass
     end
   end
 

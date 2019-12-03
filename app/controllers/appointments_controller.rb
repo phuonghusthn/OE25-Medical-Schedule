@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :logged_in_user, only: %i(new create)
+  before_action :logged_in_user, only: %i(new index create)
 
   def new
     @appointment = Appointment.new

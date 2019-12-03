@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.alert').delay(5000).fadeOut();
 
   schedule = $('#calendar').data('schedule');
 

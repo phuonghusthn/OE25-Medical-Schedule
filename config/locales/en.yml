@@ -94,6 +94,7 @@ en:
   number_patient: 200
   number_appointment: 150
   search: Search
+  signin_require: Please Signin!
   signout: Sign out
   account: My account
   university: Student at Australian National University and the lead author of a paper published in Nature on Wednesday that may hold the answer. Mr. Jones and his colleagues developed a model that simulates what’s happening in our planet’s mantle beneat the crust that we live on, offering a window to the center of the.
@@ -136,3 +137,4 @@ en:
   start_time: Start time
   end_time: End time
   new_appointment: New appointment
+  not_allowed: You are not authorized to access this page!
