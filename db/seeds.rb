@@ -4,7 +4,8 @@ d = Doctor.create!(user_name: "yennguyen",
   department: "Phẫu thuật thần kinh",
   position: "Bác sỹ",
   password: "111111",
-  password_confirmation: "111111")
+  password_confirmation: "111111",
+  room: 301)
 d.image.attach io: File.open(Rails.root
   .join("app", "assets", "images", "default_doctor.jpg")),
   filename: "default_doctor.jpg"
@@ -17,7 +18,8 @@ d.save
     department: "Phẫu thuật thần kinh",
     position: "Bác sỹ",
     password: "111111",
-    password_confirmation: "111111")
+    password_confirmation: "111111",
+    room: 302)
   d.image.attach io: File.open(Rails.root
     .join("app", "assets", "images", "default_doctor.jpg")),
     filename: "default_doctor.jpg"
