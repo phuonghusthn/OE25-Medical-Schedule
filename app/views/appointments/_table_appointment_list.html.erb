@@ -1,4 +1,4 @@
-<table id="example2" class="table table-bordered table-hover text-center table-nice">
+<table id="example2" class="table table-bordered table-hover text-center">
   <thead>
     <tr class="background-color">
       <th><%= t "stt" %></th>
@@ -13,9 +13,9 @@
   </thead>
 
   <tbody>
-    <% @appointments.each do |appointment| %>
-      <tr class="trow">
-        <td></td>
+    <% @appointments.each_with_index do |appointment, index| %>
+      <tr>
+        <td><%= numbered params[:page], index, Settings.app_pages %></td>
         <td><%= appointment.doctor_full_name %></td>
         <td><%= appointment.patient_full_name %></td>
         <td><%= appointment.start_time %></td>

@@ -205,12 +205,6 @@ p {
   text-align: center !important;
 }
 
-.table-nice {
-  width: 90% !important;
-  margin-top: 10px;
-  margin-left: 80px;
-}
-
 .padding-card {
   padding: 10px;
 }
@@ -237,4 +231,8 @@ th {
 
 .btn-color {
   background-color: $btn-color !important;
+}
+
+.container {
+  width: 1500px !important;
 }

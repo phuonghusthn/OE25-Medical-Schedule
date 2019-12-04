@@ -21,4 +21,5 @@ class Appointment < ApplicationRecord
                    message: I18n.t("should_be_less_than_5MB")}
   delegate :full_name, :room, to: :doctor, prefix: true
   delegate :full_name, to: :patient, prefix: true
+  scope :appointment_by_created_at, ->{order created_at: :desc}
 end

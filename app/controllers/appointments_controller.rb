@@ -6,7 +6,8 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appointments = Appointment.page(params[:page]).per Settings.app_pages
+    @appointments = Appointment.appointment_by_created_at.page(params[:page])
+                               .per Settings.app_pages
   end
 
   def edit; end
