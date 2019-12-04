@@ -14,3 +14,4 @@ max_address: 40
 size_file: 5
 content_type_file: ["image/jpeg", "image/gif", "image/png", "application/pdf", "application/msword", "text/plain"]
 type_file_accept: image/jpeg, image/gif, image/png, .txt, application/pdf, .doc, .docx
+app_pages: 5

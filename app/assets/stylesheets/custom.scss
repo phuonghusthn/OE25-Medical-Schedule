@@ -200,3 +200,41 @@ p {
   float: left;
   width: auto;
 }
+
+.text-center {
+  text-align: center !important;
+}
+
+.table-nice {
+  width: 90% !important;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+.padding-card {
+  padding: 10px;
+}
+
+.background-color {
+  background-color: $btn-color;
+}
+
+table {
+  counter-reset: rowNumber;
+}
+
+table .trow {
+  counter-increment: rowNumber;
+}
+
+table .trow td:first-child::before {
+  content: counter(rowNumber);
+}
+
+th {
+  text-align: center !important;
+}
+
+.btn-color {
+  background-color: $btn-color !important;
+}

@@ -4,10 +4,10 @@ module AppointmentHelper
   end
 
   def to_time_all
-    ShiftWork.pluck :to_time, :id
+    ShiftWork.pluck :end_time, :id
   end
 
   def from_time_all
-    ShiftWork.pluck :from_time, :id
+    ShiftWork.pluck :start_time, :id
   end
 end

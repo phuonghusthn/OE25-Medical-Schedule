@@ -1,8 +1,12 @@
 class AppointmentsController < ApplicationController
-  before_action :logged_in_user, only: %i(create)
+  before_action :logged_in_user, only: %i(new create)
 
   def new
     @appointment = Appointment.new
+  end
+
+  def index
+    @appointments = Appointment.page(params[:page]).per Settings.app_pages
   end
 
   def edit; end
@@ -20,6 +24,7 @@ class AppointmentsController < ApplicationController
   end
 
   def created_appointment
+    @appointment[:status] = 0
     if @appointment.save
       flash[:success] = t "appointment_created"
       redirect_to root_url

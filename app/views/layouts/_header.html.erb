@@ -54,7 +54,11 @@
           <nav class="menu_bar">
             <ul class="main_menu space-right">
               <li><%= link_to t("home"), home_path, data: {turbolinks: "false"} %></li>
-              <li><%= link_to t("appointment"), new_appointment_path %>
+              <li><%= link_to t("appointment"), "#" %>
+                <ul>
+                  <li><%= link_to t("appointment_list"), appointments_path  %></li>
+                  <li><%= link_to t("new_appointment"), new_appointment_path, data: {turbolinks: "false"} %></li>
+                </ul>
               </li>
               <li><%= link_to t("doctor"), doctors_path %>
                 <ul>

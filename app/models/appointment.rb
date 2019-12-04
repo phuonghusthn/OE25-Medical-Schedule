@@ -1,6 +1,8 @@
 class Appointment < ApplicationRecord
-  APPOINTMENT_PARAMS = %i(phone_patient address_patient doctor_id day from_time
-    to_time message medical_record).freeze
+  APPOINTMENT_PARAMS = %i(phone_patient address_patient doctor_id day start_time
+    end_time message medical_record).freeze
+
+  enum status: {waiting: 0, accept: 1, cancel: 2}
 
   belongs_to :patient
   belongs_to :doctor
@@ -17,4 +19,6 @@ class Appointment < ApplicationRecord
                            message: I18n.t("must_be_a_valid_file_format")},
             size: {less_than: Settings.size_file.megabytes,
                    message: I18n.t("should_be_less_than_5MB")}
+  delegate :full_name, :room, to: :doctor, prefix: true
+  delegate :full_name, to: :patient, prefix: true
 end
