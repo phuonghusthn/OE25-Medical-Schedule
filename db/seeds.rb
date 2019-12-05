@@ -27,7 +27,7 @@ d.save
 end
 
 20.times do |n|
-  p = Patient.create!(user_name: Faker::Name.name,
+  Patient.create!(user_name: Faker::Name.name,
     full_name: Faker::Name.name,
     email: "email#{n}@gmail.com",
     password: "111111",
@@ -56,4 +56,12 @@ end
   patient_id: 25,
   commentable_type: "User",
   content: "GOOD")
+
+10.times do |n|
+  Staff.create!(user_name: Faker::Name.name,
+    full_name: Faker::Name.name,
+    email: "nhanvien#{n}@gmail.com",
+    password: "111111",
+    password_confirmation: "111111",
+    position: "Nhân viên hành chính")
 end

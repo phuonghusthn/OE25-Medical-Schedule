@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     resources :appointments
     resources :schedules
     resources :account_activations, only: :edit
+    resources :staffs
   end
 end

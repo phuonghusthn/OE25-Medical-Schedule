@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      short: "%H:%M"
   hello: Hello world
   hi: Hi
   active: Activate
@@ -161,3 +164,12 @@ en:
     zero: Comment (0 comment)
     one: Comment (1 comment)
     other: Comment (%{count} comments)
+  appointment_canceled: Appointment canceled
+  cancel_confirm: Cancel corfirm
+  are_you_sure_delete: Are you sure you want to delete
+  are_you_sure_you_want_to_accept: Are you sure you want to accept
+  appointment_accepted: Appointment accept
+  appointment_not_accepted: Appointment not accept
+  already_have_an_appointment: Already have an appointment at this time
+  success: Success
+  canceled: Canceled
