@@ -1,0 +1,21 @@
+<%= content_tag :div, class: "single_comment_#{comment.id}" do %>
+  <div class="comment_content">
+    <div class="user_details">
+      <strong class="u_name"><%= comment.patient_full_name %></strong>
+      <div class="date"><i class="zmdi zmdi-calendar-note"></i><%= comment.created_at %></div>
+      <% if current_user&.admin? || current_user&.patient? %>
+        <%= link_to "#", class:"replay_btn" do %>
+          <i class="zmdi zmdi-mail-reply"></i>
+          <%= t "reply" %>
+        <% end %>
+      <% end %>
+      <% if check_user_to_delete comment %>
+        <%= link_to doctor_comment_path(comment.commentable_id, id: comment.id), method: :delete, class:"replay_btn", remote: true do %>
+          <i class="zmdi"></i>
+          <%= t "delete" %>
+        <% end %>
+      <% end %>
+    </div>
+    <p><%= comment.content %></p>
+  </div>
+<% end %>

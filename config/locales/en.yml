@@ -146,3 +146,15 @@ en:
   end_time: End time
   new_appointment: New appointment
   not_allowed: You are not authorized to access this page!
+  comments: Comments
+  enter_comment: Enter comment
+  add_comment: Add comment
+  reply: Reply
+  comment_not_found: Comment not found!
+  comment_remove: Comment removed!
+  delete_comment_failed: Delete comment failed!
+  create_comment_success: Create comment success!
+  comment:
+    zero: Comment (0 comment)
+    one: Comment (1 comment)
+    other: Comment (%{count} comments)
