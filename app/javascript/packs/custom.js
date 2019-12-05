@@ -18,7 +18,7 @@ $(document).ready(function() {
     defaultView: 'month',
 
     header: {
-      center: 'timelineDay,agendaWeek,month'
+      center: 'month,agendaWeek,agendaDay'
     },
 
     events: schedule,

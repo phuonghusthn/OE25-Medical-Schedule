@@ -31,7 +31,9 @@ end
     full_name: Faker::Name.name,
     email: "email#{n}@gmail.com",
     password: "111111",
-    password_confirmation: "111111")
+    password_confirmation: "111111",
+    activated: true,
+    activated_at: Time.zone.now)
 end
 
 8.times do |n|
