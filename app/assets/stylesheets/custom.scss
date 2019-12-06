@@ -236,3 +236,19 @@ th {
 .container {
   width: 1500px !important;
 }
+
+.fc-today {
+  background: $gray-medium-light !important;
+}
+
+.fc-center {
+  .fc-button {
+    width: 60px;
+    text-transform: capitalize;
+  }
+}
+
+.background_set {
+  background-image: url(img/about4.jpg);
+  background-size: contain;
+}

@@ -1,0 +1,3 @@
+<%= t "hi" %> <%= @patient.full_name %>
+<%= t "active_account" %>:
+<%= edit_account_activation_url(id: @patient.activation_token, email: @patient.email) %>

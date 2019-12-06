@@ -1,12 +1,13 @@
 class User < ApplicationRecord
   self.inheritance_column = :role
 
-  attr_accessor :remember_token
+  attr_accessor :remember_token, :activation_token, :reset_token
 
   VALID_EMAIL_REGEX = Settings.valid_email_regex
   VALID_PHONE_REGEX = Settings.valid_phone_regex
 
   before_save :downcase_email
+  before_create :create_activation_digest
 
   validates :user_name, presence: true,
     length: {maximum: Settings.max_user_name}
@@ -61,9 +62,35 @@ class User < ApplicationRecord
     update remember_digest: nil
   end
 
+  def activate
+    update activated: true, activated_at: Time.zone.now
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.time_expired.hours.ago
+  end
+
   private
 
   def downcase_email
     email.downcase!
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest activation_token
   end
 end

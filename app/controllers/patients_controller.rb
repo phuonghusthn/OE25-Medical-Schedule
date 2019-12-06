@@ -11,9 +11,9 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new patient_params
     if @patient.save
-      log_in @patient
-      flash[:success] = t "welcome_app"
-      redirect_to @patient
+      @patient.send_activation_email
+      flash[:info] = t "check_mail"
+      redirect_to root_url
     else
       render :new
     end
