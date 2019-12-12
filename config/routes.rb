@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     delete "/signout", to: "sessions#destroy"
 
     resources :patients
-    resources :doctors
+    resources :doctors do
+      resources :comments
+    end
     resources :appointments
     resources :schedules
     resources :account_activations, only: :edit

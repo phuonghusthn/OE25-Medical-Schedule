@@ -50,3 +50,10 @@ end
   start_time: "15:15:15",
   end_time: "17:15:15")
 end
+
+8.times do |n|
+  Comment.create!(commentable_id: 1,
+  patient_id: 25,
+  commentable_type: "User",
+  content: "GOOD")
+end
