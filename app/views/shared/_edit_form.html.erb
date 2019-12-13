@@ -1,0 +1,40 @@
+<%= form_for object do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label t("user_name"), class:"require_lb" %>
+  <%= f.text_field :user_name, class: "form-control space" %>
+
+  <%= f.label t("full_name"), class:"require_lb" %>
+  <%= f.text_field :full_name, class: "form-control space" %>
+
+  <%= f.label t("mail"), class:"require_lb" %>
+  <%= f.email_field :email, class: "form-control space" %>
+
+  <%= f.label t("phone") %>
+  <%= f.text_field :phone, class: "form-control space" %>
+
+  <%= f.label t("address") %>
+  <%= f.text_field :address, class: "form-control space" %>
+
+
+  <%= f.label t("pass") %>
+  <%= f.password_field :password, class: "form-control space" %>
+
+  <%= f.label t("pass_confirm") %>
+  <%= f.password_field :password_confirmation, class: "form-control space" %>
+
+  <%= f.label t("image") %>
+  <%= f.file_field :image, accept: Settings.image_accept, class: "form-control space upload_image" %>
+
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag object.display_image, class: "image avatar", id: "user_avatar" if object.image.attached? %>
+    </div>
+    <div class="col-md-8 btn_edit_form">
+      <div class="text-center space">
+        <%= f.submit t("save"), class: "btn custom_btn btn-width" %>
+        <%= link_to t("cancel"), object, class: "btn btn-danger custom_btn btn-width" %>
+      </div>
+    </div>
+  </div>
+<% end %>

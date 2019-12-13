@@ -1,11 +1,13 @@
-<div class="col-md-5">
+<div class="col-md-4">
   <div class="doctor_profile">
-    <%= image_tag @doctor.image %>
-    <h5 class="centered"><%= @doctor.full_name %></h5>
-    <hr>
+    <div class="centered">
+      <%= image_tag @doctor.image, alt: "", class: "doctor_image" %>
+      <h5><%= @doctor.full_name %></h5>
+      <hr>
+    </div>
     <ul class="doctor_data">
       <li>
-        <h4><%= t "position" %>:</h4> <%= @doctor.position %>
+        <h4><%= t "position" %>:</h4><%= @doctor.position %>
       </li>
       <li>
         <h4><%= t "department" %>:</h4> <%= @doctor.department %>
@@ -18,9 +20,23 @@
       </li>
     </ul>
     <div class="doctor_contact">
-      <div class="single_contact">
-        <strong><%= t "email" %>:</strong>
-        <%= link_to @doctor.email, Settings.mail_link %>
+      <div class="single_contact space">
+        <ul>
+          <li>
+            <strong><%= t "email" %>:</strong>
+            <%= link_to @doctor.email, Settings.mail_link %>
+          </li>
+          <% if current_user&.check_user_to_show_info %>
+            <li>
+              <strong><%= t "phone" %>:</strong>
+              <%= @doctor.phone %>
+            </li>
+            <li>
+              <strong><%= t "address" %>:</strong>
+              <%= @doctor.address %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>

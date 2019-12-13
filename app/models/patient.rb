@@ -1,5 +1,5 @@
 class Patient < User
-  PATIENT_PARAMS = %i(user_name full_name email
+  PATIENT_PARAMS = %i(user_name full_name email phone address
     password password_confirmation).freeze
 
   has_many :comments, dependent: :destroy

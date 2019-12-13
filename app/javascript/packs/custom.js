@@ -1,5 +1,31 @@
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('.image')
+        .attr('src', e.target.result)
+        .width(200)
+        .height(200);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 $(document).ready(function() {
   $('.alert').delay(5000).fadeOut();
+
+  $(document).on('change', '.upload_image', function(){
+    readURL(this);
+  });
+
+  $("#user_image").bind("change", function() {
+    var size_in_megabytes = this.files[0].size/1048576;
+    if (size_in_megabytes > 5) {
+      alert(I18n.t('choose_smaller_file'));
+    }
+  });
 
   schedule = $('#calendar').data('schedule');
 

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Image
+
   self.inheritance_column = :role
 
   attr_accessor :remember_token, :activation_token, :reset_token
@@ -9,12 +11,18 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
 
+  has_one_attached :image
+
   validates :user_name, presence: true,
     length: {maximum: Settings.max_user_name}
   validates :email, presence: true, length: {maximum: Settings.max_email},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: true
   validates :password, presence: true, length: {minimum: Settings.min_pass},
     allow_nil: true
+  validates :image, content_type: {in: Settings.content_type,
+                                   message: I18n.t("valid_image")},
+    size: {less_than: Settings.imgsize5.megabytes,
+           message: I18n.t("image_size")}
 
   class << self
     def roles
@@ -29,7 +37,10 @@ class User < ApplicationRecord
   end
 
   has_secure_password
-  has_one_attached :image
+
+  def display_image
+    image.variant resize_to_limit: Settings.resize_to_limit
+  end
 
   class << self
     def digest string
@@ -81,6 +92,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.time_expired.hours.ago
+  end
+
+  def check_user_to_show_info
+    doctor? || staff?
   end
 
   private

@@ -189,7 +189,7 @@ p {
 }
 
 .btn-width {
-  width: 70px;
+  width: 70px !important;
 }
 
 .height-input-second {
@@ -198,6 +198,10 @@ p {
 
 .red-color {
   color: $red;
+}
+
+.blue_color {
+  color: $light-blue !important;
 }
 
 .left_float {
@@ -303,4 +307,106 @@ th {
 .btn-nice {
   width: 70px !important;
   margin: 5px !important;
+}
+
+//show user
+.show_user {
+  margin: 0% 9%;
+}
+
+.show_user_header {
+  text-align: center;
+  margin-top: -6%;
+}
+
+.image_divider {
+  border-color: $light-blue;
+}
+
+.table_divider {
+  border-color: $light-blue;
+}
+
+.show_user_icon {
+  width: 25%;
+  border-radius: 50%;
+  margin-top: -8%;
+  height: 195px;
+}
+
+.show_user_table {
+  color: $black;
+  width: 50%;
+  margin: 0px auto;
+  font-size: 18px;
+
+  td {
+    border-top: 0px !important;
+    height: 20px;
+  }
+
+  .show_user_label {
+    color: $light-blue;
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  .td_btn_show_profile {
+    .btn {
+      width: 30%;
+    }
+  }
+}
+
+.profile {
+  width: 50% !important;
+}
+
+.profile_bg {
+  background-image: url(welcome_shap.png);
+  background-size: cover;
+}
+
+.detail {
+  border-radius: 5%;
+}
+
+.show_user_table td, .show_user_table th {
+  border: none !important;
+}
+
+.user_content {
+  text-align: left;
+}
+
+.edit_patient {
+  text-align: left;
+}
+
+.btn_edit_form {
+  margin-top: 18%;
+}
+
+.doctor_image {
+  width: 50%;
+  margin-top: -8%;
+  width: 400px !important;
+  height: 500px;
+
+}
+
+#user_avatar {
+  min-height: 200px !important;
+}
+
+.require_lb::after {
+  content: '*';
+  color: $red;
+  font-size: 18px;
+}
+
+#avatar_icon {
+  width: 50px;
+  border-radius: 50%;
+  height: 30px;
 }

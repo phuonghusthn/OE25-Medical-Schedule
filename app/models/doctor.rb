@@ -1,4 +1,7 @@
 class Doctor < User
+  DOCTOR_PARAMS = %i(user_name full_name email phone address
+    password password_confirmation).freeze
+
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :appointments, dependent: :destroy
   has_many :shift_works, dependent: :destroy
