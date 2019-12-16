@@ -92,6 +92,7 @@ en:
   hust: HUST
   action: Action
   edit: Edit
+  edit_falsed: Edit falsed!
   delete: Delete
   doctor: Doctor
   more_info: More info
@@ -147,6 +148,8 @@ en:
   new_appointment: New appointment
   not_allowed: You are not authorized to access this page!
   comments: Comments
+  comment_at: commented at
+  options: Options
   enter_comment: Enter comment
   add_comment: Add comment
   reply: Reply

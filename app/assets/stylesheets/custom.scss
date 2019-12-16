@@ -188,6 +188,10 @@ p {
   background-color: $color-submit !important;
 }
 
+.btn-width {
+  width: 70px;
+}
+
 .height-input-second {
   height: 50px !important;
 }
@@ -266,6 +270,32 @@ th {
   margin: 0px 0px !important;
 }
 
+.content_height {
+  textarea {
+    height: 100px;
+  }
+}
+
 .message {
   height: 80px;
+}
+
+.user_details {
+  li{
+    display: inline;
+  }
+  .show{
+    display: inline-block !important;
+  }
+}
+
+.float_right {
+  float: right;
+}
+
+.test:after {
+  content: '\2807';
+  font-size: 1em;
+  color: $black_gray;
+  float: right;
 }
