@@ -1,11 +1,16 @@
 module SchedulesHelper
   def load_schedule
-    events_a = []
-    @appointment&.map do |t|
-      start_t = (t.day.to_s + " " + t.start_time.strftime("%H:%M:%S"))
-      end_t = (t.day.to_s + " " + t.end_time.strftime("%H:%M:%S"))
-      events_a << {title: t.patient.user_name, start: start_t, end: end_t}
+    @appointment&.map do |appointment|
+      day = appointment.day.to_s
+      start_time = day + " " + I18n.l(appointment.start_time, format: :short, locale: :'en')
+      end_time = day + " " + I18n.l(appointment.end_time, format: :short, locale: :'en')
+      url = patient_path appointment.patient_id
+      {
+        title: appointment.patient.user_name,
+        start: start_time,
+        end: end_time,
+        url: url
+      }
     end
-    events_a
   end
 end

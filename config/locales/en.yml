@@ -179,3 +179,7 @@ en:
   valid_image: Image must be a valid image format
   image_size: Should be less than 5MB
   choose_smaller_file: Maximum file size is 5MB. Please choose a smaller file.
+  description: Description
+  patient_info: Patient Information
+  no_file: No file upload!
+  doctor_schedules: Doctor Schedules

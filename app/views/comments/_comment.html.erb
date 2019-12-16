@@ -10,7 +10,7 @@
         <strong><%= comment.patient_full_name %></strong>
         <span class="text-muted"><%= t "comment_at" %> <%= time_tag comment.created_at %></span>
         <ul class="htr_language float_right">
-          <% if check_user_to_delete comment %>
+          <% if can_delete_comment? comment %>
             <li class="dropdown">
               <%= link_to "#", class: "dropdown-toggle", data: {toggle: "dropdown"} do %>
                 <div class="test"></div>

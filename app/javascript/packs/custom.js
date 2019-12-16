@@ -13,11 +13,27 @@ function readURL(input) {
   }
 }
 
+function readURL_file(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('.file_name')
+        .append(fileReader.fileName)
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 $(document).ready(function() {
   $('.alert').delay(5000).fadeOut();
 
   $(document).on('change', '.upload_image', function(){
     readURL(this);
+  });
+
+  $(document).on('change', '.upload_file', function(){
+    readURL_file(this);
   });
 
   $("#user_image").bind("change", function() {
@@ -27,14 +43,24 @@ $(document).ready(function() {
     }
   });
 
-  schedule = $('#calendar').data('schedule');
-
   $('#calendar').fullCalendar({
     weekends: false,
+    slotDuration: '00:15',
+    minTime: '06:00:00',
+    maxTime: '18:00:01',
+    events: $('#calendar').data('schedule'),
+
+    dayClick: function(date, jsEvent, view) {
+      $('#calendar').fullCalendar('changeView', 'agendaDay');
+      $('#calendar').fullCalendar('gotoDate', date);
+    },
 
     eventClick: function(calEvent, jsEvent, view) {
-      $('#calendar').fullCalendar('changeView', 'agendaDay')
-      $('#calendar').fullCalendar('gotoDate', calEvent);
+      if (view.type == 'month' || view.type == 'agendaWeek' ) {
+        $('#calendar').fullCalendar('changeView', 'agendaDay');
+        $('#calendar').fullCalendar('gotoDate', calEvent.start);
+        return false;
+      }
     },
 
     eventMouseout: function(calEvent, jsEvent) {
@@ -46,8 +72,6 @@ $(document).ready(function() {
     header: {
       center: 'month,agendaWeek,agendaDay'
     },
-
-    events: schedule,
 
     eventMouseover: function(calEvent, jsEvent) {
       var duration = calEvent.start.format("HH:mm") + ' - ' + calEvent.end.format("HH:mm")

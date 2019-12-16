@@ -27,6 +27,7 @@ class PatientsController < ApplicationController
     ActiveRecord::Base.transaction do
       @patient.update! patient_params
       @patient.attach_image params, :patient
+      @patient.file.attach params[:patient][:file]
     end
     flash[:success] = t "profile_updated"
     redirect_to @patient

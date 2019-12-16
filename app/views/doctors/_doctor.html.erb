@@ -5,6 +5,10 @@
     <% end %>
     <h5><i><%= doctor.position %></i></h5>
     <h5><%= link_to doctor.full_name, doctor %></h5>
-    <span><%= doctor.department %></span>
+    <span class="space"><%= doctor.department %></span>
+    <br>
+    <% if can_edit_doctor? %>
+      <%= link_to t("edit"), edit_doctor_path(doctor.id), class: "btn custom_btn btn-width" %>
+    <% end %>
   </div>
 </div>

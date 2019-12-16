@@ -48,6 +48,8 @@ class DoctorsController < ApplicationController
   end
 
   def correct_doctor
+    return unless current_user.doctor? || current_user.patient?
+
     redirect_to(root_url) unless current_user? @doctor
   end
 end

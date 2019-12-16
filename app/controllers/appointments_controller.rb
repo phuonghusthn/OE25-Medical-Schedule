@@ -15,7 +15,6 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = current_user.appointments.build appointment_params
-    @appointment.medical_record.attach params[:appointment][:medical_record]
     created_appointment
   end
 
@@ -34,7 +33,7 @@ class AppointmentsController < ApplicationController
       @appointment.update(status:
       Appointment.statuses.key(params["appointment"]["status"].to_i))
       check_status
-    elsif params["appointment"]["status"] == Appointment.statuses[:cancel].to_s
+    elsif is_cancel_appointment?
       @appointment.cancel!
       flash[:success] = t "appointment_canceled"
     else
@@ -69,12 +68,14 @@ class AppointmentsController < ApplicationController
 
   def check_unduplicate_accepted
     Appointment.accept.appointment_exists(@appointment.doctor_id,
-                                          @appointment.start_time, @appointment.day).blank?
+                                          @appointment.start_time,
+                                          @appointment.day).blank?
   end
 
   def duplicate_waiting
     Appointment.waiting.appointment_exists(@appointment.doctor_id,
-                                           @appointment.start_time, @appointment.day)
+                                           @appointment.start_time,
+                                           @appointment.day)
   end
 
   def check_status
@@ -87,5 +88,9 @@ class AppointmentsController < ApplicationController
     else
       flash[:success] = t "appointment_canceled"
     end
+  end
+
+  def is_cancel_appointment?
+    params["appointment"]["status"] == Appointment.statuses[:cancel].to_s
   end
 end

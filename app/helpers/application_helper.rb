@@ -13,4 +13,10 @@ module ApplicationHelper
     params_page = 1 if params_page.nil?
     (params_page.to_i - 1) * per_page.to_i + index.to_i + 1
   end
+
+  def get_file_name object
+    return object.file.blob[:filename] if object.file.attached?
+
+    t "no_file"
+  end
 end
