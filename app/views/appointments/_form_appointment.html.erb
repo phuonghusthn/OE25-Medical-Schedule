@@ -9,7 +9,8 @@
       </div>
       <div class="col-lg-6 col-md-12">
         <%= f.label t "phone" %>
-        <%= f.text_field :phone_patient, class: "height-input-second", value: current_user.phone if current_user %>
+        <%= f.text_field :phone_patient, class: "height-input-second",
+          value: current_user.phone if current_user  %>
       </div>
     </div>
     <div class="row">
@@ -22,32 +23,27 @@
     <div class="row">
       <div class="col-md-12">
         <%= f.label t "address" %>
-        <%= f.text_field :address_patient, class: "height-input-second", value: current_user.address if current_user %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <%= f.label t "doctor" %>
-        <%= f.select :doctor_id, doctors,
-          {}, class: "select-be height-input-second" %>
+        <%= f.text_field :address_patient, class: "height-input-second",
+          value: current_user.address if current_user %>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-12">
+        <%= f.label t "doctor" %>
+        <%= f.select :doctor_id, doctors,
+          {}, class: "select-be height-input-second" %>
+      </div>
+      <div class="col-lg-4 col-md-12">
         <%= f.label t "day" %>
-        <%= f.date_field :day, class: "height-input-second" %>
+        <%= f.date_field :day, class: "height-input-second",
+         min: earliest_day_register, max: latest_day_register %>
       </div>
       <div>
-        <div class="col-lg-3 col-md-12">
+        <div class="col-lg-2 col-md-12">
           <%= f.label t "start_time" %>
           <%= f.select :start_time, from_time_all,
             {}, class: "select-be height-input-second" %>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-12">
-        <%= f.label t "end_time" %>
-        <%= f.select :end_time, to_time_all,
-          {}, class: "select-be height-input-second" %>
       </div>
     </div>
     <div class="row padding-message">

@@ -53,6 +53,7 @@ en:
   new_1_content: Clicking sounds were generted size of cig arette smoke particles chemical compositions
   total_staff: 108
   staff: Our staff
+  staffs: Staffs Management
   total_experience: 20
   experience: Years of experience
   total_smiler: 1450
@@ -146,7 +147,6 @@ en:
   update_your_profile: Update profile
   profile_updated: Profile update
   not_success: Not update success
-  stt: No.
   id: ID
   doctor_name: Doctor name
   patient_name: Patient name
@@ -193,3 +193,14 @@ en:
   admin_dashboard: Admin Dashboard
   are_you_sure_delete: Are you sure you want to delete?
   admin_list: Admins List
+  stt: "No."
+  doctor_deleted: doctor deleted
+  doctor_not_deleted: doctor not deleted
+  edit_information_doctor: edit information doctor
+  update_information_doctor: Update information doctor
+  doctor_updated: Doctor update
+  doctor_not_success: Doctor not success
+  create_doctor_success: create doctor success
+  create_doctor_not_success: create doctor not success
+  create: Create
+  not_create_success: Not create success

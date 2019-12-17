@@ -81,24 +81,53 @@ th {
     border: none;
     display: flex;
   }
-  .page{
+  .page {
     padding: 0;
     float: none;
     border: none;
     display: flex;
   }
-  .next{
+  .next {
     padding: 0;
     float: none;
     border: none;
     display: flex;
   }
-  .last{
+  .last {
     padding: 0;
     float: none;
     border: none;
     display: flex;
   }
+}
+
+.require_lb::after {
+  content: '*';
+  color: $red;
+  font-size: 18px;
+}
+
+.detail {
+  border-radius: 5%;
+  width: 80%;
+}
+
+.edit-form-nice {
+  width: 80%;
+  margin-left: 150px;
+}
+
+.top-margin {
+  margin-top: 30px;
+}
+
+.space {
+  margin-bottom: 20px;
+  height: 40px;
+}
+
+.float-right {
+  float: right;
 }
 
 .user_avatar {
@@ -120,10 +149,4 @@ th {
 
 .address_content {
   width: 20%;
-}
-
-.require_lb::after {
-  content: '*';
-  color: $red;
-  font-size: 18px;
 }
