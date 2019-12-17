@@ -36,6 +36,16 @@ end
     activated_at: Time.zone.now)
 end
 
+3.times do |n|
+  p = Staff.create!(user_name: Faker::Name.name,
+    full_name: Faker::Name.name,
+    email: "staff#{n}@gmail.com",
+    password: "111111",
+    password_confirmation: "111111",
+    activated: true,
+    activated_at: Time.zone.now)
+end
+
 8.times do |n|
     ShiftWork.create!(doctor_id: 1,
     start_time: Faker::Time.forward(days: 3, period: :day),
@@ -56,6 +66,7 @@ end
   patient_id: 25,
   commentable_type: "User",
   content: "GOOD")
+end
 
 10.times do |n|
   Staff.create!(user_name: Faker::Name.name,

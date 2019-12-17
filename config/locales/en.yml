@@ -136,6 +136,8 @@ en:
   should_be_less_than_5MB: should be less than 5MB
   edit_profile: Edit profile
   save_changes: Save changes
+  save: Save
+  settings: Settings
   update_your_profile: Update your profile
   profile_updated: Profile update
   not_success: Not update success
@@ -160,6 +162,7 @@ en:
   comment_remove: Comment removed!
   delete_comment_failed: Delete comment failed!
   create_comment_success: Create comment success!
+  image: Image
   comment:
     zero: Comment (0 comment)
     one: Comment (1 comment)
@@ -173,3 +176,6 @@ en:
   already_have_an_appointment: Already have an appointment at this time
   success: Success
   canceled: Canceled
+  valid_image: Image must be a valid image format
+  image_size: Should be less than 5MB
+  choose_smaller_file: Maximum file size is 5MB. Please choose a smaller file.

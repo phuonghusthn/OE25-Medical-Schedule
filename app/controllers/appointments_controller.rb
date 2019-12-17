@@ -69,12 +69,12 @@ class AppointmentsController < ApplicationController
 
   def check_unduplicate_accepted
     Appointment.accept.appointment_exists(@appointment.doctor_id,
-      @appointment.start_time, @appointment.day).blank?
+                                          @appointment.start_time, @appointment.day).blank?
   end
 
   def duplicate_waiting
     Appointment.waiting.appointment_exists(@appointment.doctor_id,
-      @appointment.start_time, @appointment.day)
+                                           @appointment.start_time, @appointment.day)
   end
 
   def check_status

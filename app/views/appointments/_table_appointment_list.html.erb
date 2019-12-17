@@ -16,7 +16,9 @@
     <% @appointments.each_with_index do |appointment, index| %>
       <tr>
         <td><%= numbered params[:page], index, Settings.app_pages %></td>
-        <td><%= appointment.doctor_full_name %></td>
+        <td>
+          <%= link_to appointment.doctor_full_name, doctor_schedules_path(appointment.doctor), data: {turbolinks: "false"} %>
+        </td>
         <td><%= appointment.patient_full_name %></td>
         <td><%= appointment.day %></td>
         <td><%= I18n.l(appointment.start_time, format: :short) %></td>

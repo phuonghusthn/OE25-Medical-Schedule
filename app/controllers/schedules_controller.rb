@@ -1,9 +1,8 @@
 class SchedulesController < ApplicationController
-  before_action :logged_in_user, only: %i(index)
-  before_action :check_patient, only: %i(index)
+  before_action :logged_in_user, :check_patient, :load_doctor, only: :index
 
   def index
-    @appointment = current_user.appointments
+    @appointment = @doctor.appointments
   end
 
   private
@@ -13,5 +12,12 @@ class SchedulesController < ApplicationController
 
     flash[:danger] = t "not_allowed"
     redirect_to root_path
+  end
+
+  def load_doctor
+    return if @doctor = Doctor.find_by(id: params[:doctor_id])
+
+    flash[:danger] = t "not_found"
+    redirect_to appointments_path
   end
 end
