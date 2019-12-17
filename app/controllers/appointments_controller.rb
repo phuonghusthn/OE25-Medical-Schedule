@@ -1,12 +1,13 @@
 class AppointmentsController < ApplicationController
-  before_action :logged_in_user, only: %i(new index create)
+  before_action :logged_in_user, except: %i(create index)
+  before_action :find_appointmentpointment, only: %i(update destroy)
 
   def new
     @appointment = Appointment.new
   end
 
   def index
-    @appointments = Appointment.appointment_by_created_at.page(params[:page])
+    @appointments = Appointment.by_created_at.page(params[:page])
                                .per Settings.app_pages
   end
 
@@ -18,6 +19,30 @@ class AppointmentsController < ApplicationController
     created_appointment
   end
 
+  def destroy
+    if @appointment.destroy
+      flash[:success] = t "appointment_canceled"
+      redirect_to request.referer || root_url
+    else
+      flash[:danger] = t "not_success"
+      redirect_to root_url
+    end
+  end
+
+  def update
+    if check_unduplicate_accepted
+      @appointment.update(status:
+      Appointment.statuses.key(params["appointment"]["status"].to_i))
+      check_status
+    elsif params["appointment"]["status"] == Appointment.statuses[:cancel].to_s
+      @appointment.cancel!
+      flash[:success] = t "appointment_canceled"
+    else
+      flash[:danger] = t "already_have_an_appointment"
+    end
+    redirect_to appointments_path
+  end
+
   private
 
   def appointment_params
@@ -25,13 +50,42 @@ class AppointmentsController < ApplicationController
   end
 
   def created_appointment
-    @appointment[:status] = 0
     if @appointment.save
       flash[:success] = t "appointment_created"
       redirect_to root_url
     else
       flash[:danger] = t "appointment_not_created"
       render :new
+    end
+  end
+
+  def find_appointmentpointment
+    @appointment = Appointment.find_by id: params[:id]
+    return if @appointment
+
+    flash[:danger] = t "not_found"
+    redirect_to root_url
+  end
+
+  def check_unduplicate_accepted
+    Appointment.accept.appointment_exists(@appointment.doctor_id,
+      @appointment.start_time, @appointment.day).blank?
+  end
+
+  def duplicate_waiting
+    Appointment.waiting.appointment_exists(@appointment.doctor_id,
+      @appointment.start_time, @appointment.day)
+  end
+
+  def check_status
+    if params["appointment"]["status"] == Appointment.statuses[:accept].to_s
+      duplicate_waiting.each do |ap|
+        ap.update status: Appointment.statuses[:cancel]
+      end
+
+      flash[:success] = t "appointment_accepted"
+    else
+      flash[:success] = t "appointment_canceled"
     end
   end
 end

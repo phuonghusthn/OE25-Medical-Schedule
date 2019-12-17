@@ -4,9 +4,9 @@
       <th><%= t "stt" %></th>
       <th><%= t "doctor_name" %></th>
       <th><%= t "patient_name" %></th>
+      <th><%= t "day" %></th>
       <th><%= t "start_time" %></th>
       <th><%= t "end_time" %></th>
-      <th><%= t "day" %></th>
       <th><%= t "room" %></th>
       <th class="action-head"><%= t "action" %></th>
     </tr>
@@ -18,20 +18,29 @@
         <td><%= numbered params[:page], index, Settings.app_pages %></td>
         <td><%= appointment.doctor_full_name %></td>
         <td><%= appointment.patient_full_name %></td>
-        <td><%= appointment.start_time %></td>
-        <td><%= appointment.end_time %></td>
         <td><%= appointment.day %></td>
+        <td><%= I18n.l(appointment.start_time, format: :short) %></td>
+        <td><%= I18n.l(appointment.end_time, format: :short)  %></td>
         <td><%= appointment.doctor_room %></td>
-        <% if appointment.waiting? || appointment.cancel?  %>
-          <td>
-            <button type="button" class="btn btn-primary btn-color"><%= t "accept" %></button>
-            <button type="button" class="btn btn-danger"><%= t "cancel" %></button>
-          </td>
-        <% elsif appointment.accept? %>
         <td>
-          <button type="button" class="btn btn-danger"><%= t "cancel" %></button>
+          <% if appointment.waiting? %>
+            <%= form_for appointment do |f| %>
+              <%= f.hidden_field :status, value: Appointment.statuses[:accept] %>
+              <%= f.submit t("accept"), class: "btn btn-primary btn-nice" %>
+            <% end %>
+            <%= form_for appointment do |f| %>
+              <%= f.hidden_field :status, value: Appointment.statuses[:cancel] %>
+              <%= f.submit t("cancel"), class: "btn btn-danger btn-nice" %>
+            <% end %>
+          <% elsif appointment.cancel? %>
+            <%= t "canceled" %>
+          <% else %>
+            <%= form_for appointment do |f| %>
+              <%= f.hidden_field :status, value: Appointment.statuses[:cancel] %>
+              <%= f.submit t("cancel"), class: "btn btn-danger btn-nice" %>
+            <% end %>
+          <% end %>
         </td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
