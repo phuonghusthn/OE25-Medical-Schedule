@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     post "/signin", to: "sessions#create"
     delete "/signout", to: "sessions#destroy"
 
-    resources :patients
+    resources :patients do
+      resources :medical_records
+    end
     resources :doctors do
       resources :comments
       resources :schedules
@@ -18,6 +20,5 @@ Rails.application.routes.draw do
     resources :staffs
     resources :appointments
     resources :account_activations, only: :edit
-    resources :staffs
   end
 end

@@ -9,20 +9,20 @@
       </div>
       <div class="col-lg-6 col-md-12">
         <%= f.label t "phone" %>
-        <%= f.text_field :phone_patient, class: "height-input-second" %>
+        <%= f.text_field :phone_patient, class: "height-input-second", value: current_user.phone if current_user %>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <%= f.label t "email" %>
-        <%= f.email_field :email_patient, class: "height-input-second",
+        <%= f.email_field :email, class: "height-input-second",
           disabled: true, value: current_user.email if current_user %>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <%= f.label t "address" %>
-        <%= f.text_field :address_patient, class: "height-input-second" %>
+        <%= f.text_field :address_patient, class: "height-input-second", value: current_user.address if current_user %>
       </div>
     </div>
     <div class="row">
@@ -53,12 +53,6 @@
     <div class="row padding-message">
       <div class="col col-md-12 message-nice">
         <%= f.text_area :message, placeholder: t("message") %>
-      </div>
-    </div>
-    <div class="row">
-      <p class="p-record" ><%= t "medical_record" %>:</p>
-      <div class="col col-md-12">
-        <%= f.file_field :medical_record, accept: Settings.type_file_accept %>
       </div>
     </div>
     <div class="row text">

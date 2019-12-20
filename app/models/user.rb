@@ -12,6 +12,7 @@ class User < ApplicationRecord
   before_create :create_activation_digest
 
   has_one_attached :image
+  has_one_attached :file
 
   validates :user_name, presence: true,
     length: {maximum: Settings.max_user_name}

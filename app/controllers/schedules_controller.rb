@@ -2,7 +2,7 @@ class SchedulesController < ApplicationController
   before_action :logged_in_user, :check_patient, :load_doctor, only: :index
 
   def index
-    @appointment = @doctor.appointments
+    @appointment = @doctor.appointments.accept.includes(:patient)
   end
 
   private

@@ -16,19 +16,42 @@
   <%= f.label t("address") %>
   <%= f.text_field :address, class: "form-control space" %>
 
+  <% if current_user.doctor? %>
+    <%= f.label t("pass") %>
+    <%= f.password_field :password, class: "form-control space" %>
 
-  <%= f.label t("pass") %>
-  <%= f.password_field :password, class: "form-control space" %>
+    <%= f.label t("pass_confirm") %>
+    <%= f.password_field :password_confirmation, class: "form-control space" %>
+  <% end %>
 
-  <%= f.label t("pass_confirm") %>
-  <%= f.password_field :password_confirmation, class: "form-control space" %>
+  <% if object.doctor? %>
+    <%= f.label t("position") %>
+    <%= f.text_field :position, class: "form-control space" %>
+
+    <%= f.label t("experience") %>
+    <%= f.text_field :experience, class: "form-control space" %>
+
+    <%= f.label t("room") %>
+    <%= f.text_field :room, class: "form-control space" %>
+
+    <%= f.label t("description") %>
+    <%= f.text_area :description, class: "form-control space" %>
+  <% end %>
+
+  <% if object.patient? %>
+    <div>
+      <%= f.label t("medical_record") %>
+      <%= f.file_field :file, accept: Settings.type_file_accept, class: "form-control upload_file" %>
+      <%= link_to get_file_name(object), "#", class: "space file_name" %>
+    </div>
+  <% end %>
 
   <%= f.label t("image") %>
   <%= f.file_field :image, accept: Settings.image_accept, class: "form-control space upload_image" %>
 
   <div class="row">
     <div class="col-md-4">
-      <%= image_tag object.display_image, class: "image avatar", id: "user_avatar" if object.image.attached? %>
+      <%= image_tag object.display_image, class: "image avatar", id: "user_avatar" if object.image.attached?%>
     </div>
     <div class="col-md-8 btn_edit_form">
       <div class="text-center space">
