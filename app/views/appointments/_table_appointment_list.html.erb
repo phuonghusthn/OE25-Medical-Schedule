@@ -15,7 +15,7 @@
   <tbody>
     <% @appointments.each_with_index do |appointment, index| %>
       <tr>
-        <td><%= numbered params[:page], index, Settings.app_pages %></td>
+        <td class="centered"><%= numbered params[:page], index, Settings.app_pages %></td>
         <td>
           <%= link_to appointment.doctor_full_name, doctor_schedules_path(appointment.doctor), data: {turbolinks: "false"} %>
         </td>

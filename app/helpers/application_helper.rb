@@ -19,4 +19,10 @@ module ApplicationHelper
 
     t "no_file"
   end
+
+  def load_yield_object object
+    return object unless current_user.admin?
+
+    [:admin, object]
+  end
 end

@@ -40,7 +40,7 @@ end
   p.save
 end
 
-3.times do |n|
+10.times do |n|
   p = Staff.create!(user_name: Faker::Name.name,
     full_name: Faker::Name.name,
     email: "staff#{n}@gmail.com",
@@ -76,11 +76,13 @@ end
   content: "GOOD")
 end
 
-10.times do |n|
-  Staff.create!(user_name: Faker::Name.name,
-    full_name: Faker::Name.name,
-    email: "nhanvien#{n}@gmail.com",
-    password: "111111",
-    password_confirmation: "111111",
-    position: "Nhân viên hành chính")
-end
+p = User.create!(user_name: Faker::Name.name,
+  full_name: Faker::Name.name,
+  email: "admin@gmail.com",
+  role: "Admin",
+  password: "111111",
+  password_confirmation: "111111",)
+p.image.attach io: File.open(Rails.root
+  .join("app", "assets", "images", "default_avatar.png")),
+  filename: "default_avatar.png"
+p.save
