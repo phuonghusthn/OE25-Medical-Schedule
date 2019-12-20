@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :admins
     namespace :admin do
       resources :staffs
+      resources :admins
     end
   end
 end

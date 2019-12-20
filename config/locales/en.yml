@@ -70,7 +70,7 @@ en:
   remember_me: Remember me on this computer
   invalid: Invalid email/password combination
   not_found: User not found
-  admin: Admin
+  admins: Admins
   create_doctor: Create doctor
   manager_user: Manager Users
   manager_doctor: Manager Doctor
@@ -192,3 +192,4 @@ en:
   account_deleted: Account deleted sucessfully!
   admin_dashboard: Admin Dashboard
   are_you_sure_delete: Are you sure you want to delete?
+  admin_list: Admins List

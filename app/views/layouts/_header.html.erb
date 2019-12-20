@@ -54,7 +54,7 @@
         <div class="col-lg-10 text-right col-6">
           <nav class="menu_bar">
             <ul class="main_menu space-right">
-              <% if current_user.admin? %>
+              <% if current_user&.admin? %>
                 <li><%= link_to t("admin_dashboard"), admins_dashboard_path %></li>
               <% end %>
               <li><%= link_to t("home"), home_path, data: {turbolinks: "false"} %></li>
