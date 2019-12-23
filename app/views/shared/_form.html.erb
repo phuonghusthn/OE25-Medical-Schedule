@@ -1,13 +1,13 @@
-<%= form_for @patient do |f| %>
+<%= form_for load_yield_object(object) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
-  <%= f.label t("user_name") %>
+  <%= f.label t("user_name"), class:"require_lb" %>
   <%= f.text_field :user_name, class: "form-control space" %>
 
-  <%= f.label t("full_name") %>
+  <%= f.label t("full_name"), class:"require_lb" %>
   <%= f.text_field :full_name, class: "form-control space" %>
 
-  <%= f.label t("mail") %>
+  <%= f.label t("mail"), class:"require_lb" %>
   <%= f.email_field :email, class: "form-control space" %>
 
   <%= f.label t("pass") %>
@@ -16,5 +16,5 @@
   <%= f.label t("pass_confirm") %>
   <%= f.password_field :password_confirmation, class: "form-control space" %>
 
-  <%= f.submit yield(:button_text), class: "btn custom_btn space" %>
+  <%= f.submit yield(:button_text), class: "btn custom_btn space create_account" %>
 <% end %>

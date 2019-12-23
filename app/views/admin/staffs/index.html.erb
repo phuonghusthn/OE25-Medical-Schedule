@@ -1,0 +1,15 @@
+<% provide :title, t("staffs") %>
+<div class="card">
+  <div class="card-header">
+    <h1 class="card-title color-list">
+      <%= t "staffs_list" %>
+    </h1>
+    <%= link_to t("create_account"), new_admin_staff_path , class: "btn btn-primary create_account" %>
+  </div>
+  <div class="card-body">
+    <div>
+      <%= render "staffs_list" %>
+    </div>
+    <%= paginate @staffs %>
+  </div>
+</div>

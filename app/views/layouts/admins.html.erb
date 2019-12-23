@@ -5,9 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><%= full_title yield(:title) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
   <%= stylesheet_link_tag Settings.http_ionicframework %>
   <%= stylesheet_link_tag Settings.https_googleapis %>
   <%= stylesheet_link_tag "admins", media: "all", "data-turbolinks-track": "reload" %>
+  <%= stylesheet_link_tag Settings.awesome_icon, integrity: "sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ", crossorigin: "anonymous" %>
   <%= javascript_pack_tag "admins", "data-turbolinks-track": "reload" %>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">

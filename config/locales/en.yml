@@ -24,7 +24,8 @@ en:
   patient: Patient
   language: Language
   home: Home
-  doctor_list: Doctors List
+  staffs_list: Staffs List
+  doctors_list: Doctors List
   doctor_detail: Doctor Detail
   about: About us
   signin: Sign in
@@ -99,7 +100,11 @@ en:
   delete: Delete
   doctor: Doctor
   more_info: More info
-  staff: Staff
+  staffs: Staffs
+  edit_staff_account: Edit staff account
+  edit_doctor_account: Edit doctor account
+  edit_patient_account: Edit patient account
+  edit_admin_account: Edit admin account
   patient: Patient
   number_doctor: 150
   number_staff: 120
@@ -138,10 +143,10 @@ en:
   save_changes: Save changes
   save: Save
   settings: Settings
-  update_your_profile: Update your profile
+  update_your_profile: Update profile
   profile_updated: Profile update
   not_success: Not update success
-  stt: STT
+  stt: No.
   id: ID
   doctor_name: Doctor name
   patient_name: Patient name
@@ -183,3 +188,7 @@ en:
   patient_info: Patient Information
   no_file: No file upload!
   doctor_schedules: Doctor Schedules
+  create_account_success: Create account successfully!
+  account_deleted: Account deleted sucessfully!
+  admin_dashboard: Admin Dashboard
+  are_you_sure_delete: Are you sure you want to delete?

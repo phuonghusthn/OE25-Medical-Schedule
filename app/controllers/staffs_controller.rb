@@ -4,10 +4,6 @@ class StaffsController < ApplicationController
 
   def show; end
 
-  def new
-    @staff = Staff.new
-  end
-
   def edit; end
 
   def update

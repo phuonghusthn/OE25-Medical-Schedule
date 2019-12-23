@@ -48,6 +48,14 @@ class SessionsController < ApplicationController
     else
       forget @user
     end
-    redirect_back_or root_url
+    redirect_admin_or_other
+  end
+
+  def redirect_admin_or_other
+    if @user.admin?
+      redirect_back_or admins_dashboard_path
+    else
+      redirect_back_or root_url
+    end
   end
 end

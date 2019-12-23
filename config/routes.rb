@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     post "/signin", to: "sessions#create"
     delete "/signout", to: "sessions#destroy"
 
+    get "admins/dashboard", to: "admins#index"
+
     resources :patients do
       resources :medical_records
     end
@@ -20,5 +22,9 @@ Rails.application.routes.draw do
     resources :staffs
     resources :appointments
     resources :account_activations, only: :edit
+    resources :admins
+    namespace :admin do
+      resources :staffs
+    end
   end
 end
