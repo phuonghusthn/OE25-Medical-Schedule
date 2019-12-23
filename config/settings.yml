@@ -22,3 +22,4 @@ awesome_icon: "https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 limit_day: 7
 max_day: 14
 limit_time: -7200
+default_password: "111111"
