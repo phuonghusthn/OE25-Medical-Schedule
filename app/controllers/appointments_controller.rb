@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :logged_in_user, except: %i(create index)
+  before_action :logged_in_user
   before_action :find_appointmentpointment, only: %i(update destroy)
 
   def new
@@ -10,8 +10,6 @@ class AppointmentsController < ApplicationController
     @appointments = Appointment.by_created_at.page(params[:page])
                                .per Settings.app_pages
   end
-
-  def edit; end
 
   def create
     params[:appointment][:end_time] =
