@@ -8,10 +8,10 @@ module AppointmentHelper
   end
 
   def earliest_day_register
-    Date.today + Settings.limit_day
+    Time.zone.today + Settings.limit_day
   end
 
   def latest_day_register
-    Date.today + Settings.max_day
+    Time.zone.today + Settings.max_day
   end
 end
