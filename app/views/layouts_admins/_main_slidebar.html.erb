@@ -10,6 +10,12 @@
     </div>
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <%= link_to admin_admins_path, class: "nav-link" do %>
+            <i class="nav-icon fas fa-book-medical"></i>
+            <p><%= t "admin_list" %></p>
+          <% end %>
+        </li>
         <li class="nav-item has-treeview">
           <%= link_to "#", class: "nav-link" do %>
             <i class="nav-icon fas fa-users-cog"></i>

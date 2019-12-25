@@ -13,8 +13,10 @@
   <%= f.label t("phone") %>
   <%= f.text_field :phone, class: "form-control space" %>
 
-  <%= f.label t("address") %>
-  <%= f.text_field :address, class: "form-control space" %>
+  <% unless object.admin? %>
+    <%= f.label t("address") %>
+    <%= f.text_field :address, class: "form-control space" %>
+  <% end %>
 
   <% if current_user.doctor? %>
     <%= f.label t("pass") %>

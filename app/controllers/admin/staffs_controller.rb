@@ -1,5 +1,5 @@
 class Admin::StaffsController < AdminsController
-  before_action :logged_in_user, except: %i(new create)
+  before_action :logged_in_user
   before_action :load_staff, only: %i(edit update destroy)
 
   def index

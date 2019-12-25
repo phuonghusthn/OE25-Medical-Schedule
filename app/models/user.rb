@@ -25,6 +25,8 @@ class User < ApplicationRecord
     size: {less_than: Settings.imgsize5.megabytes,
            message: I18n.t("image_size")}
 
+  scope :order_by_name, ->{order full_name: :asc}
+
   class << self
     def roles
       %w(Admin Staff Doctor Patient)
