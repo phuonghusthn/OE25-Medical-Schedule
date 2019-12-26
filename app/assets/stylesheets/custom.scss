@@ -21,6 +21,21 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
+.btn-nice {
+  width: 70px !important;
+  margin: 5px !important;
+}
+
+.btn_group {
+  width: 200px;
+  ul {
+    height: 32px;
+  }
+  ul > li {
+    display: inline-flex;
+  }
+}
+
 input {
   height: none !important;
 }

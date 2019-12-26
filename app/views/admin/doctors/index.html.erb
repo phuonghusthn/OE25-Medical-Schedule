@@ -1,0 +1,13 @@
+<% provide :title, t("doctor") %>
+<div class="card">
+  <div class="card-header">
+    <h1 class="card-title color-list">
+      <%= t "doctor_list" %>
+    </h1>
+    <%= link_to t("create_account"), new_admin_doctor_path , class: "create_account btn btn-primary" %>
+  </div>
+  <div class="card-body">
+    <%= render "doctors_list" %>
+    <%= paginate @doctors %>
+  </div>
+</div>

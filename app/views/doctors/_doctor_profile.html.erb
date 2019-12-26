@@ -1,7 +1,7 @@
 <div class="col-md-4">
   <div class="doctor_profile">
     <div class="centered">
-      <%= image_tag @doctor.image, alt: "", class: "doctor_image" %>
+      <%= image_tag @doctor.image, alt: "", class: "doctor_image" if @doctor.image.attached? %>
       <h5><%= @doctor.full_name %></h5>
       <hr>
     </div>

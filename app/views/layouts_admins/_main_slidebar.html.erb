@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <%= image_tag current_user.image, alt: "", class: "img-circle elevation-2" %>
+        <%= image_tag current_user.image, alt: "", class: "img-circle elevation-2" if current_user.image.attached? %>
       </div>
       <div class="info">
         <%= link_to current_user.user_name, admin_path(current_user) , :class => "d-block" %>
@@ -26,7 +26,7 @@
           <% end %>
           <ul class="nav nav-treeview">
             <li class="nav-item item_list">
-              <%= link_to "#", :class => "nav-link" do %>
+              <%= link_to admin_doctors_path, :class => "nav-link" do %>
                  <i class="fas fa-user-md nav-icon"></i>
                 <%= t "manager_doctor" %>
               <% end %>

@@ -2,10 +2,4 @@ class AdminsController < ApplicationController
   layouts "admins"
 
   def index; end
-
-  def new; end
-
-  def show; end
-
-  def edit; end
 end

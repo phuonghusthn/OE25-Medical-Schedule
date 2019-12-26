@@ -14,6 +14,8 @@ class AppointmentsController < ApplicationController
   def edit; end
 
   def create
+    params[:appointment][:end_time] =
+      params[:appointment][:start_time].to_time(:utc).ago(Settings.limit_time)
     @appointment = current_user.appointments.build appointment_params
     created_appointment
   end
