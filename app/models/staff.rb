@@ -3,4 +3,6 @@ class Staff < User
     password password_confirmation).freeze
 
   has_many :news, class_name: New.name, dependent: :destroy
+
+  scope :order_by_name, ->{order full_name: :asc}
 end
