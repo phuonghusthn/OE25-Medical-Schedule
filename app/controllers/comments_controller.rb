@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user
   before_action :load_commentable, except: :new
   before_action :load_comment, only: %i(edit update destroy)
+  load_and_authorize_resource
 
   def new
     @comment = Comment.new

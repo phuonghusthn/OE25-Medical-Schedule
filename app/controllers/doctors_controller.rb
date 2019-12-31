@@ -1,7 +1,7 @@
 class DoctorsController < ApplicationController
   before_action :authenticate_user!, except: :index
   before_action :load_doctor, only: %i(show edit update)
-  before_action :correct_doctor, only: %i(edit update)
+  load_and_authorize_resource
 
   def index
     @doctors = if params[:search].blank?
@@ -39,11 +39,5 @@ class DoctorsController < ApplicationController
 
     flash[:danger] = t "not_found"
     redirect_to doctors_path
-  end
-
-  def correct_doctor
-    return unless current_user.doctor? || current_user.patient?
-
-    redirect_to(root_url) unless current_user? @doctor
   end
 end

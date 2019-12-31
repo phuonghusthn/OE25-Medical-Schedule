@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       registrations: "users/registrations",
       confirmations: "users/confirmations",
     }
-    get "admins/dashboard", to: "admins#index"
+    get "admin/dashboard", to: "admin/dashboard#index"
 
     resources :users, only: :show
     resources :patients do
