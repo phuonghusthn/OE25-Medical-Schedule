@@ -208,3 +208,4 @@ en:
   errors_not_a_number: is not a number
   errors_taken: has already been taken
   invalid_errors: is invalid
+  invalid: Invalid email/password combination

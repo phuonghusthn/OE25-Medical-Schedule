@@ -24,6 +24,8 @@ max_day: 14
 limit_time: -7200
 accept: 1
 default_password: "111111"
+fail_password: "111"
+fail_email: "aaa"
 delete_test: 100
 factories:
   appointment:

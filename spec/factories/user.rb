@@ -4,7 +4,6 @@ FactoryBot.define do
     full_name { Faker::Name.name }
     email { Faker::Internet.email }
     password_digest {BCrypt::Password.create(Settings.default_password)}
-    role { "Admin" }
     after(:build) do |user|
       user.image.attach io: File.open(Rails.root
         .join("app", "assets", "images", "default_avatar.png")),
