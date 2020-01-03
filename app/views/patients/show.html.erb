@@ -34,7 +34,7 @@
               <% if current_user.patient? %>
                 <tr>
                   <td colspan="2" class="td_btn_show_profile">
-                    <%= link_to t("settings"), edit_patient_path(current_user), class: "btn custom_btn btn-width" %>
+                    <%= link_to t("settings"), edit_user_registration_path, class: "btn custom_btn btn-width" %>
                   </td>
                 </tr>
               <% end %>

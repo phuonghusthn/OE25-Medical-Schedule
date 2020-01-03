@@ -11,7 +11,7 @@
   <%= f.email_field :email, class: "form-control space" %>
 
   <%= f.label t("phone") %>
-  <%= f.text_field :phone, class: "form-control space" %>
+  <%= f.text_field :p￼hone, class: "form-control space" %>
 
   <% unless object.admin? %>
     <%= f.label t("address") %>
@@ -20,15 +20,15 @@
 
   <% if current_user.doctor? %>
     <%= f.label t("pass") %>
-    <%= f.password_field :password, class: "form-control space" %>
+    <%= f.password_field :p￼assword, class: "form-control space" %>
 
     <%= f.label t("pass_confirm") %>
-    <%= f.password_field :password_confirmation, class: "form-control space" %>
+    <%= f.password_field ￼:password_confirmation, class: "form-control space" %>
   <% end %>
 
   <% if object.doctor? %>
     <%= f.label t("position") %>
-    <%= f.text_field :position, class: "form-control space" %>
+    <%= f.text_field ￼:position, class: "form-control space" %>
 
     <%= f.label t("experience") %>
     <%= f.text_field :experience, class: "form-control space" %>

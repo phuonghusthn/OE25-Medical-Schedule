@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def check_auth_controller?
-    %w(patients sessions).include?(controller.controller_name) &&
+    %w(registrations sessions).include?(controller.controller_name) &&
       controller.action_name == "new"
   end
 
