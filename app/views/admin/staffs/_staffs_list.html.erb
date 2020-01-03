@@ -22,7 +22,7 @@
         <td class="phone_content"><%= staff.phone %></td>
         <td class="address_content"><%= staff.address %></td>
         <td class="centered fit_content">
-          <%= link_to t("edit"), edit_admin_staff_path(staff), class: "btn btn-primary btn-size" %>
+          <%= link_to t("edit"), edit_admin_staff_path(staff), class: "btn btn-primary btn-size", method: :get %>
           <%= link_to t("delete"), admin_staff_path(staff), method: :delete, data: {confirm: t("are_you_sure_delete")}, class: "btn btn-danger btn-size" %>
         </td>
       </tr>

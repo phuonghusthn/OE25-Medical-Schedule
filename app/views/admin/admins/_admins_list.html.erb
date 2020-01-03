@@ -20,7 +20,7 @@
         <td class="address_content"><%= admin.email %></td>
         <td class="name_content"><%= admin.phone %></td>
         <td class="centered address_content">
-          <%= link_to t("edit"), edit_admin_admin_path(admin), class: "btn btn-primary btn-size" %>
+          <%= link_to t("edit"), edit_admin_admin_path(admin), class: "btn btn-primary btn-size", method: :get %>
           <%= link_to t("delete"), admin_admin_path(admin), method: :delete, data: {confirm: t("are_you_sure_delete")}, class: "btn btn-danger btn-size" %>
         </td>
       </tr>
