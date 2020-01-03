@@ -8,7 +8,6 @@ RSpec.describe Appointment, type: :model do
 
   describe "Databases" do
     it {expect(subject).to have_db_column(:doctor_id).of_type :integer}
-
     it {expect(subject).to have_db_column(:patient_id).of_type :integer}
     it {expect(subject).to have_db_column(:phone_patient).of_type :string }
     it {expect(subject).to have_db_column(:address_patient).of_type :string }

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :appointment do |f|
-    f.status {Settings.accept}
+    f.status {Settings.waiting}
     f.phone_patient {Faker::PhoneNumber.subscriber_number(length: Settings.max_phone)}
     f.address_patient {Faker::Address}
     f.day {Date.today}
