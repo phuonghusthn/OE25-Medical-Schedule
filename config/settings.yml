@@ -28,6 +28,8 @@ fail_password: "111"
 fail_email: "aaa"
 delete_test: 100
 waiting: waiting
+accept: :accept
+cancel: :cancel
 factories:
   appointment:
     max_number_phone: 11

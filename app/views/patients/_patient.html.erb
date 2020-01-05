@@ -1,0 +1,16 @@
+<tr>
+  <td><%= numbered params[:page], patient_counter, Settings.app_pages %></td>
+  <td>
+    <%= link_to patient.full_name, patient_path(patient.id), data: {turbolinks: "false"} %>
+  </td>
+  <td><%= patient.email %></td>
+  <td><%= patient.phone %></td>
+  <td><%= patient.address %></td>
+  <td>
+    <ul>
+      <% patient.appointments.each do |appointment| %>
+        <li><%= link_to appointment.doctor_full_name, appointment_path(appointment) %></li>
+      <% end %>
+    </ul>
+  </td>
+</tr>

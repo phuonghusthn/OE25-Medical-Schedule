@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale, :authenticate_user!
+  before_action :set_locale, :authenticate_user!, :set_search
 
   protect_from_forgery with: :exception
 
@@ -33,5 +33,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up, keys: User::ADDED_ATTRS
     devise_parameter_sanitizer.permit :account_update, keys: User::ADDED_ATTRS
+  end
+
+  def set_search
+    @q = Doctor.ransack params[:q]
   end
 end

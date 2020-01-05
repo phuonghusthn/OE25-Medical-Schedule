@@ -1,9 +1,15 @@
 class PatientsController < ApplicationController
-  skip_before_action :authenticate_user!, except: :show
+  skip_before_action :authenticate_user!, except: %i(index show)
+  skip_before_action :set_search
+  before_action :set_search_patient
   before_action :find_patient, only: :show
 
   load_and_authorize_resource
-  skip_authorize_resource only: %i(new create)
+
+  def index
+    @patients = @q.result.order_by_name
+                  .page(params[:page]).per Settings.page_size
+  end
 
   def show; end
 
@@ -14,5 +20,9 @@ class PatientsController < ApplicationController
 
     flash[:danger] = t "not_found"
     redirect_to root_url
+  end
+
+  def set_search_patient
+    @q = Patient.ransack params[:q]
   end
 end

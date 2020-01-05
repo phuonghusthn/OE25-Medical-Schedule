@@ -79,9 +79,9 @@ en:
   admins: Admins
   create_doctor: Create doctor
   manager_user: Manager Users
-  manager_doctor: Manager Doctor
-  manager_staff: Manager Staff
-  manager_patient: ManagerPatient
+  manager_doctor: Doctors Management
+  manager_staff: Staffs Management
+  manager_patient: Patients Management
   appointment: Appointment
   new: News
   user_name: User name
@@ -112,6 +112,7 @@ en:
   edit_patient_account: Edit patient account
   edit_admin_account: Edit admin account
   patient: Patient
+  patient_list: Patients List
   number_doctor: 150
   number_staff: 120
   number_patient: 200
@@ -141,7 +142,8 @@ en:
   no_result: No result!
   search_result: Search result
   schedule: Doctor Schedules
-  appointment_created: Appointment created
+  appointment_list_with_doctor: Appointments list with doctor
+  appointment_created: Appointment created! Please wait for accept from us!
   appointment_not_created: Appointment not created
   must_be_a_valid_file_format: must be a valid file format
   should_be_less_than_5MB: should be less than 5MB
@@ -194,11 +196,13 @@ en:
   patient_info: Patient Information
   no_file: No file upload!
   doctor_schedules: Doctor Schedules
+  doctor_list: Doctors List
   create_account_success: Create account successfully!
   account_deleted: Account deleted sucessfully!
   admin_dashboard: Admin Dashboard
   are_you_sure_delete: Are you sure you want to delete?
   admin_list: Admins List
+  admin: Admin
   stt: "No."
   doctor_deleted: doctor deleted
   doctor_not_deleted: doctor not deleted
@@ -225,3 +229,5 @@ en:
   mini_character: characters minimum
   doctor_list: Doctor list
   you_are_not_authorized_to_access_this_page: You are not authorized to access this page.
+  a_z: A -> Z
+  z_a: Z -> A

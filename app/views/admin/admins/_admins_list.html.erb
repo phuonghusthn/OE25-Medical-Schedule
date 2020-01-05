@@ -1,29 +1,20 @@
-<table id="example2" class="table table-bordered table-hover table-responsive">
-  <thead>
-    <tr>
-      <th><%= t "stt" %></th>
-      <th><%= t "avatar" %></th>
-      <th><%= t "full_name" %></th>
-      <th><%= t "user_name" %></th>
-      <th><%= t "email" %></th>
-      <th><%= t "phone" %></th>
-      <th class="action-head"><%= t "action" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @admins.each_with_index do |admin, index| %>
+<% if @admins.present? %>
+  <table id="example2" class="table table-bordered table-hover table-responsive">
+    <thead>
       <tr>
-        <td class="centered no_content"><%= numbered params[:page], index, Settings.per_page %></td>
-        <td class="centered fit_content"><%= image_tag admin.display_image, class: "user_avatar" %></td>
-        <td class="address_content"><%= admin.full_name %></td>
-        <td class="address_content"><%= admin.user_name %></td>
-        <td class="address_content"><%= admin.email %></td>
-        <td class="name_content"><%= admin.phone %></td>
-        <td class="centered address_content">
-          <%= link_to t("edit"), edit_admin_admin_path(admin), class: "btn btn-primary btn-size", method: :get %>
-          <%= link_to t("delete"), admin_admin_path(admin), method: :delete, data: {confirm: t("are_you_sure_delete")}, class: "btn btn-danger btn-size" %>
-        </td>
+        <th><%= t "stt" %></th>
+        <th><%= t "avatar" %></th>
+        <th><%= t "full_name" %></th>
+        <th><%= t "user_name" %></th>
+        <th><%= t "email" %></th>
+        <th><%= t "phone" %></th>
+        <th class="action-head"><%= t "action" %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <%= render @admins %>
+    </tbody>
+  </table>
+<% else %>
+  <h3 class="red_color"><%= t "no_result" %></h3>
+<% end %>
