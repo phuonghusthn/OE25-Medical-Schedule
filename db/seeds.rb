@@ -5,7 +5,8 @@ d = Doctor.create!(user_name: "yennguyen",
   position: "Bác sỹ",
   password: "111111",
   password_confirmation: "111111",
-  room: 301)
+  room: 301,
+  confirmed_at: Time.zone.now)
 d.image.attach io: File.open(Rails.root
   .join("app", "assets", "images", "default_doctor.jpg")),
   filename: "default_doctor.jpg"
@@ -19,7 +20,8 @@ d.save
     position: "Bác sỹ",
     password: "111111",
     password_confirmation: "111111",
-    room: 302)
+    room: 302,
+    confirmed_at: Time.zone.now)
   d.image.attach io: File.open(Rails.root
     .join("app", "assets", "images", "default_doctor.jpg")),
     filename: "default_doctor.jpg"
@@ -32,8 +34,7 @@ end
     email: "email#{n}@gmail.com",
     password: "111111",
     password_confirmation: "111111",
-    activated: true,
-    activated_at: Time.zone.now)
+    confirmed_at: Time.zone.now)
   p.image.attach io: File.open(Rails.root
     .join("app", "assets", "images", "default_avatar.png")),
     filename: "default_avatar.png"
@@ -46,8 +47,7 @@ end
     email: "staff#{n}@gmail.com",
     password: "111111",
     password_confirmation: "111111",
-    activated: true,
-    activated_at: Time.zone.now)
+    confirmed_at: Time.zone.now)
   p.image.attach io: File.open(Rails.root
     .join("app", "assets", "images", "default_avatar.png")),
     filename: "default_avatar.png"
@@ -81,7 +81,8 @@ p = User.create!(user_name: Faker::Name.name,
   email: "admin@gmail.com",
   role: "Admin",
   password: "111111",
-  password_confirmation: "111111",)
+  password_confirmation: "111111",
+  confirmed_at: Time.zone.now)
 p.image.attach io: File.open(Rails.root
   .join("app", "assets", "images", "default_avatar.png")),
   filename: "default_avatar.png"

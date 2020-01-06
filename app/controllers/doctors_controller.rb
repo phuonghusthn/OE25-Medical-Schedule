@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :logged_in_user, except: :index
+  before_action :authenticate_user!, except: :index
   before_action :load_doctor, only: %i(show edit update)
   before_action :correct_doctor, only: %i(edit update)
 
@@ -11,12 +11,6 @@ class DoctorsController < ApplicationController
                        .page(params[:page]).per Settings.page_size
                end
   end
-
-  def new
-    @doctor = Doctor.new
-  end
-
-  def create; end
 
   def edit; end
 

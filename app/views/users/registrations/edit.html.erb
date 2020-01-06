@@ -4,10 +4,10 @@
     <div class="row">
       <div class="single_doctor detail">
         <div class="show_user space">
-          <h1><%= t "update_your_profile" %></h1>
+          <h1><%= t "update_your_profile" %> <%= resource_name.to_s.humanize %></h1>
         </div>
         <div class="show_user">
-          <%= render "shared/edit_form", object: @patient %>
+          <%= render "users/shared/edit_form", object: @patient %>
         </div>
       </div>
     </div>
