@@ -53,7 +53,7 @@ class SessionsController < ApplicationController
 
   def redirect_admin_or_other
     if @user.admin?
-      redirect_back_or admins_dashboard_path
+      redirect_back_or admin_dashboard_path
     else
       redirect_back_or root_url
     end

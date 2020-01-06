@@ -1,5 +1,6 @@
 class StaffsController < ApplicationController
   before_action :authenticate_user!, :load_staff, only: :show
+  before_action :load_staff, only: %i(show edit update)
 
   def show; end
 

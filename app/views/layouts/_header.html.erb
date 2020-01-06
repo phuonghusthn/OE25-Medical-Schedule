@@ -55,15 +55,15 @@
           <nav class="menu_bar">
             <ul class="main_menu space-right">
               <% if current_user&.admin? %>
-                <li><%= link_to t("admin_dashboard"), admins_dashboard_path %></li>
+                <li><%= link_to t("admin_dashboard"), admin_dashboard_path %></li>
               <% end %>
               <li><%= link_to t("home"), home_path, data: {turbolinks: "false"} %></li>
               <li><%= link_to t("appointment"), "#", data: {turbolinks: "false"} %>
                 <ul>
-                  <% if current_user&.admin? || current_user&.staff? %>
+                  <% if can? :index, Appointment %>
                     <li><%= link_to t("appointment_list"), appointments_path %></li>
                   <% end %>
-                  <% if current_user&.admin? || current_user&.patient? %>
+                  <% if can? :create, Appointment %>
                     <li><%= link_to t("new_appointment"), new_appointment_path, data: {turbolinks: "false"} %></li>
                   <% end %>
                 </ul>

@@ -1,6 +1,6 @@
-class Admin::StaffsController < AdminsController
-  before_action :logged_in_user
+class Admin::StaffsController < Admin::BaseController
   before_action :load_staff, only: %i(edit update destroy)
+  load_and_authorize_resource
 
   def index
     @staffs = Staff.order_by_name.page(params[:page]).per Settings.per_page

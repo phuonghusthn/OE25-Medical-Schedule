@@ -1,6 +1,6 @@
-class Admin::DoctorsController < AdminsController
-  before_action :logged_in_user
+class Admin::DoctorsController < Admin::BaseController
   before_action :load_doctor, only: %i(edit destroy update)
+  load_and_authorize_resource
 
   def index
     @doctors = Doctor.page(params[:page]).per Settings.page_size

@@ -222,3 +222,5 @@ en:
   require_current_pass: (we need your current password to confirm your changes)
   current_password: Current password
   mini_character: characters minimum
+  doctor_list: Doctor list
+  you_are_not_authorized_to_access_this_page: You are not authorized to access this page.
