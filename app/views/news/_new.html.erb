@@ -1,0 +1,26 @@
+<div class="col-md-6">
+  <div class="single_blog">
+    <% if new.images.attached? %>
+      <% new.images.each do |image| %>
+      <div class="blog_img"><%= image_tag image %></div>
+      <% end %>
+    <% end %>
+    <div class="blog_content">
+      <div class="blog_meta">
+        <%= link_to "#", class: "date box-width" do%>
+          <h4><%= Date::MONTHNAMES[new.created_at.month] %></h4>
+          <span><%= new.created_at.day %></span>
+        <% end %>
+        <%= link_to "#", class: "comment_box box-width" do %>
+          <i class="zmdi zmdi-comments"></i><%= Settings.number_comment %>
+        <% end %>
+      </div>
+      <h4><%= new.title %></h4>
+      <p class="hiddent-content"><%= new.content %></p>
+      <%= link_to news_path(new.id), class: "read_btn" do %>
+        <%= t "know_more" %>
+        <i class="zmdi zmdi-pmmore lus"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

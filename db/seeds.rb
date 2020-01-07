@@ -87,3 +87,13 @@ p.image.attach io: File.open(Rails.root
   .join("app", "assets", "images", "default_avatar.png")),
   filename: "default_avatar.png"
 p.save
+
+10.times do |n|
+  p = New.create!(staff_id: 33,
+    title: "How to handle your kids’ from mystey",
+    content: "Wednesday scientists near California in have found that, through this process a can filter all of the bay’s water from pound oculus, a lens that will give the impression of seeing the fish from the bottom of a huge cocktail glas. And that’s just one of many attractions and exhibits Officials at the $305 million Phillip and Patricia Frost Muse um of Science promise that it will be a vivid expression of modern scientific inquiry and exposition. Its opening follows a series of setbacks and lawsuitsWednesday scientists near California in have found that, through this process a can filter all of the bay’s water from pound oculus, a lens that will give the impression of seeing the fish from the bottom of a huge cocktail glas. And that’s just one of many attractions and exhibits Officials at the $305 million Phillip and Patricia Frost Muse um of Science promise that it will be a vivid expression of modern scientific inquiry and exposition. Its opening follows a series of setbacks and lawsuits")
+  p.images.attach io: File.open(Rails.root
+    .join("app/assets/images/blog1.jpg")),
+    filename: "default_image_new.png"
+  p.save
+end

@@ -30,6 +30,9 @@ delete_test: 100
 waiting: waiting
 accept: :accept
 cancel: :cancel
+new_page_size: 6
+number_like: 233
+number_comment: 123
 factories:
   appointment:
     max_number_phone: 11
