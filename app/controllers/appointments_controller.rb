@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :new
   before_action :find_appointmentpointment, only: %i(update destroy)
   load_and_authorize_resource
 

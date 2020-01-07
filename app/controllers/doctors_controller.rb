@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  skip_before_action :authenticate_user!, only: :index
   before_action :load_doctor, only: %i(show edit update)
   load_and_authorize_resource
 

@@ -1,4 +1,4 @@
-<% provide :title, t("edit_profile")  %>
+<% provide :title, t("edit_profile") %>
 <div class="doctor_page profile_bg">
   <div class="container profile">
     <div class="row">
@@ -7,7 +7,7 @@
           <h1><%= t "update_your_profile" %> <%= resource_name.to_s.humanize %></h1>
         </div>
         <div class="show_user">
-          <%= render "users/shared/edit_form", object: @patient %>
+          <%= render "users/shared/edit_form" %>
         </div>
       </div>
     </div>

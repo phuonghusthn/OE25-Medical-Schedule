@@ -11,7 +11,7 @@ module Image
     return true unless params.eql? "create"
 
     image.attach(io: File.open(Rails.root
-      .join("app", "assets", "images", "default_avatar.png")),
+      .join("app/assets/images/default_avatar.png")),
       filename: "default_avatar.png")
   end
 end

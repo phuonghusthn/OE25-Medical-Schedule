@@ -3,6 +3,7 @@ class Ability
 
   def initialize user
     can :read, Doctor
+    can :new, Appointment
     return unless user
 
     can [:show, :update], User, id: user.id

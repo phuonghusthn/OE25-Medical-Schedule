@@ -62,7 +62,7 @@
     </div>
     <div class="col-md-8 btn_edit_form">
       <div class="space create_account right_float">
-        <%= link_to t("cancel"), :back, class: "btn btn-danger custom_btn btn-width" %>
+        <%= link_to t("cancel"), polymorphic_path(resource), class: "btn btn-danger custom_btn btn-width" %>
         <%= f.submit t("save"), class: "btn custom_btn btn-width" %>
       </div>
     </div>
