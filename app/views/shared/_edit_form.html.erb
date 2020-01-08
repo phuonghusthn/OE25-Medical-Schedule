@@ -43,8 +43,19 @@
   <% if object.patient? %>
     <div>
       <%= f.label t("medical_record") %>
-      <%= f.file_field :file, accept: Settings.type_file_accept, class: "form-control upload_file" %>
-      <%= link_to get_file_name(object), "#", class: "space file_name" %>
+      <%= f.file_field :files, accept: Settings.type_file_accept, multiple: true, class: "form-control upload_file" %>
+      <% if object.files.attached? %>
+        <ul>
+          <% object.files.each do |file| %>
+            <li class="medical_record">
+              <%= link_to get_file_name(object, file), url_for(file), class: "space file_name" %>
+              <i class="fas fa-trash"></i>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h6><%= t "no_file" %></h6>
+      <% end %>
     </div>
   <% end %>
 

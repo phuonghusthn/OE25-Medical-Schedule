@@ -29,8 +29,8 @@ en:
   patient: Patient
   language: Language
   home: Home
-  staffs_list: Staffs List
-  doctors_list: Doctors List
+  staff_list: Staffs List
+  doctor_list: Doctors List
   doctor_detail: Doctor Detail
   about: About us
   signin: Sign in
@@ -82,6 +82,7 @@ en:
   manager_doctor: Doctors Management
   manager_staff: Staffs Management
   manager_patient: Patients Management
+  patients: Patients
   appointment: Appointment
   new: News
   user_name: User name

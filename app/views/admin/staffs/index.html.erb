@@ -2,7 +2,7 @@
 <div class="card">
   <div class="card-header">
     <h1 class="card-title color-list">
-      <%= t "staffs_list" %>
+      <%= t "staff_list" %>
     </h1><%= search_form_for @q, url: admin_staffs_path, class: "form-inline" do |f| %>
         <div class="input-group input-group-sm div-top-search">
           <%= f.search_field :full_name_or_email_or_phone_or_address_or_user_name_cont, class: "form-control" %>

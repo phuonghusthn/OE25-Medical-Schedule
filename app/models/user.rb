@@ -15,7 +15,7 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_one_attached :image
-  has_one_attached :file
+  has_many_attached :files
 
   validates :user_name, presence: true,
     length: {maximum: Settings.max_user_name}
