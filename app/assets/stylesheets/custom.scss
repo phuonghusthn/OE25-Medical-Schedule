@@ -481,3 +481,14 @@ th {
   background-color: $background_alert_color;
   border-color: $border_alert_color;
 }
+
+.hiddent-content {
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.box-width {
+  width: 80px !important;
+}

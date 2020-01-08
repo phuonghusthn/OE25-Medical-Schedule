@@ -63,7 +63,7 @@
                   <% if can? :index, Appointment %>
                     <li><%= link_to t("appointment_list"), appointments_path %></li>
                   <% end %>
-                  <% if can? :create, Appointment %>
+                  <% if can? :new, Appointment %>
                     <li><%= link_to t("new_appointment"), new_appointment_path, data: {turbolinks: "false"} %></li>
                   <% end %>
                 </ul>

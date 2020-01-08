@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :comments
       resources :schedules
     end
+    resources :news
     resources :staffs
     resources :appointments
     resources :admins
