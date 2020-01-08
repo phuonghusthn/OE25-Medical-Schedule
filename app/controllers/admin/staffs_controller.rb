@@ -3,7 +3,9 @@ class Admin::StaffsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @staffs = Staff.order_by_name.page(params[:page]).per Settings.per_page
+    @q = Staff.ransack params[:q]
+    @staffs = @q.result.order_by_name
+                .page(params[:page]).per Settings.per_page
   end
 
   def new

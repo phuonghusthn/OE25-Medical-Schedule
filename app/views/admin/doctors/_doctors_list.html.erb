@@ -1,34 +1,22 @@
-<table id="example2" class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th><%= t "stt" %></th>
-      <th><%= t "user_name" %></th>
-      <th><%= t "avata" %></th>
-      <th><%= t "full_name" %></th>
-      <th><%= t "position" %></th>
-      <th><%= t "department" %></th>
-      <th><%= t "experience" %></th>
-      <th><%= t "room" %></th>
-      <th class="action-head"><%= t "action" %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @doctors.each_with_index do |doctor, index| %>
+<% if @doctors.present? %>
+  <table id="example2" class="table table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= numbered params[:page], index, Settings.page_size %></td>
-        <td><%= doctor.user_name %></td>
-        <td><%= image_tag  doctor.image, class: "user_avatar" if doctor.image.attached? %></td>
-        <td><%= doctor.full_name %></td>
-        <td><%= doctor.position %></td>
-        <td><%= doctor.department %></td>
-        <td><%= doctor.experience %></td>
-        <td><%= doctor.room %></td>
-        <td>
-          <%= link_to t("edit"), edit_admin_doctor_path(doctor.id), class: "btn btn-primary btn-size", method: :get %>
-          <%= link_to t("delete"), admin_doctor_path(doctor), method: :delete, data:
-            { confirm: t("are_you_sure_delete") }, class: "btn btn-danger btn-size" %>
-        </td>
+        <th><%= t "stt" %></th>
+        <th><%= t "user_name" %></th>
+        <th><%= t "avata" %></th>
+        <th><%= t "full_name" %></th>
+        <th><%= t "position" %></th>
+        <th><%= t "department" %></th>
+        <th><%= t "experience" %></th>
+        <th><%= t "room" %></th>
+        <th class="action-head"><%= t "action" %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <%= render @doctors %>
+    </tbody>
+  </table>
+<% else %>
+  <h3 class="red_color"><%= t "no_result" %></h3>
+<% end %>

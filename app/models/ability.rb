@@ -13,6 +13,7 @@ class Ability
       can :manage, :all
     when "Staff"
       can :update, Doctor
+      can :index, Patient
       can [:index, :update], Appointment
     when "Doctor"
       can :read, Comment

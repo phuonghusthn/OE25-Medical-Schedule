@@ -1,15 +1,13 @@
 class DoctorsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :load_doctor, only: %i(show edit update)
+  before_action :correct_doctor, only: %i(edit update)
+
   load_and_authorize_resource
 
   def index
-    @doctors = if params[:search].blank?
-                 Doctor.page(params[:page]).per Settings.page_size
-               else
-                 Doctor.search_by_name(params[:search])
-                       .page(params[:page]).per Settings.page_size
-               end
+    @doctors = @q.result.order_by_name
+                 .page(params[:page]).per Settings.page_size
   end
 
   def edit; end

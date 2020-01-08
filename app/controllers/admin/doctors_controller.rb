@@ -3,7 +3,9 @@ class Admin::DoctorsController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @doctors = Doctor.page(params[:page]).per Settings.page_size
+    @q = Doctor.ransack params[:q]
+    @doctors = @q.result.order_by_name
+                 .page(params[:page]).per Settings.page_size
   end
 
   def new

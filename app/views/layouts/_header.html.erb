@@ -76,10 +76,17 @@
                   <% end %>
                 </ul>
               </li>
+              <% if current_user&.admin? || current_user&.staff? %>
+                <li><%= link_to t("patient"), "#", data: {turbolinks: "false"} %>
+                  <ul>
+                    <li><%= link_to t("patient_list"), patients_path %></li>
+                  </ul>
+                </li>
+              <% end %>
               <li><%= link_to t("about"), about_path, data: {turbolinks: "false"} %></li>
             </ul>
-            <%= form_tag doctors_path, method: :get, class: "search_form" do %>
-              <%= search_field_tag :search, params[:search], placeholder: t("search"), class: "left_float" %>
+            <%= search_form_for @q, class: "search_form" do |f| %>
+              <%= f.search_field :full_name_or_department_or_email_or_phone_cont, placeholder: t("search"), class: "left_float" %>
               <%= button_tag "", class: "zmdi zmdi-search search-size" %>
             <% end %>
           </nav>
