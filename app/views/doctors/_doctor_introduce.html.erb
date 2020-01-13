@@ -3,6 +3,9 @@
     <div class="single_doctor_history">
       <h2><%= @doctor.full_name %></h2>
       <p><%= @doctor.description %></p>
+      <% if can_rate_doctor? current_user, @doctor %>
+        <%= rating_for @doctor, "quality", disable_after_rate: true, imdb_avg: true, cancel: false %>
+      <% end %>
     </div>
   </div>
 </div>

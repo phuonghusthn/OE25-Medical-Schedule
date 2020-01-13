@@ -143,7 +143,7 @@ en:
   no_result: No result!
   search_result: Search result
   schedule: Doctor Schedules
-  appointment_list_with_doctor: Appointments list with doctor
+  appointment_list_with_doctor: Appointments with doctor
   appointment_created: Appointment created! Please wait for accept from us!
   appointment_not_created: Appointment not created
   must_be_a_valid_file_format: must be a valid file format
@@ -242,3 +242,4 @@ en:
   show_news: Show new
   obituary: Obituary Tells Brutal  of Sister’s
   news: News
+  rating: Thanks for using our service! Please rating for our doctor!

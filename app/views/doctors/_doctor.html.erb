@@ -6,6 +6,10 @@
     <h5><i><%= doctor.position %></i></h5>
     <h5><%= link_to doctor.full_name, doctor %></h5>
     <span class="space"><%= doctor.department %></span>
+    <% if current_user&.patient? %>
+      <span><i><%= t "rating" %></i></span>
+      <%= rating_for doctor, "quality", disable_after_rate: true, imdb_avg: true, cancel: false %>
+    <% end %>
     <br>
     <% if can_edit_doctor? %>
       <%= link_to t("edit"), edit_doctor_path(doctor.id), class: "btn custom_btn btn-width" %>
