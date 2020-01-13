@@ -14,4 +14,9 @@ module Image
       .join("app/assets/images/default_avatar.png")),
       filename: "default_avatar.png")
   end
+
+  def attach_file params
+    files.purge
+    files.attach params[:patient][:files]
+  end
 end

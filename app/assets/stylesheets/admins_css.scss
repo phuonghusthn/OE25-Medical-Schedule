@@ -136,7 +136,7 @@ th {
 }
 
 .name_content {
-  width: 16%;
+  width: 15%;
 }
 
 .phone_content {
@@ -153,4 +153,13 @@ th {
 
 .red_color {
   color: $red;
+}
+
+.file_name {
+  text-decoration: underline;
+  display: table-row-group;
+}
+
+.medical_record {
+  display: inline;
 }
