@@ -3,7 +3,7 @@
   <td class="fit_content">
     <% if new.images.attached? %>
       <% new.images.each do |image| %>
-        <%= image_tag image, class: "size-image-nice" %>
+        <%= image_tag image, class: "size-image-nice news_img" %>
       <% end %>
     <% else %>
       <h6><%= t "no_image" %></h6>

@@ -29,4 +29,8 @@ module ApplicationHelper
   def staffs
     Staff.pluck :full_name, :id
   end
+
+  def total_index_page total_item
+    total_item.size
+  end
 end

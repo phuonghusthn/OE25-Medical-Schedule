@@ -48,7 +48,9 @@
           <hr class="image_divider">
           <p>
             <% if @patient.files.attached? %>
-              <iframe src=<%= url_for(@patient.file) %>, class="file_content"></iframe>
+              <% @patient.files.each do |file| %>
+                <iframe src=<%= url_for(file) %>, class="file_content"></iframe>
+              <% end %>
             <% else %>
               <h5><%= t "no_file" %></h5>
             <% end %>

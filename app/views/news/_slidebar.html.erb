@@ -1,24 +1,24 @@
 <div class="col-md-4">
   <div class="widget_raper">
-    <form action="#" class="widget_search_bar">
-      <input type="search" placeholder= <%= I18n.t "search" %>>
-      <button type="submit"><i class="zmdi zmdi-search"></i></button>
-    </form>
+    <%= search_form_for @search, url: news_index_path, class: "widget_search_bar" do |f| %>
+      <%= f.search_field :content_or_title_cont, placeholder: t("search"), class: "left_float" %>
+      <%= button_tag "", class: "zmdi zmdi-search search_size" %>
+    <% end %>
     <div class="recent_post">
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
           <%= link_to "#Popular", class: "nav-link active", data: {toggle: "tab"} do %>
-            <% t("popular") %>
+            <%= t "popular" %>
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "#Recent", class: "nav-link", data: {toggle: "tab"} do %>
-            <% t("rencent") %>
+            <%= t "rencent" %>
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "#Comments", class: "nav-link", data: {toggle: "tab"} do %>
-            <% t("comments") %>
+            <%= t "comments" %>
           <% end %>
         </li>
       </ul>

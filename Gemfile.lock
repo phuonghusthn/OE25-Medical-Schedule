@@ -243,6 +243,7 @@ GEM
       activesupport (>= 5.0)
       i18n
       polyamorous (= 2.3.0)
+    ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -374,6 +375,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-i18n
   ransack
+  ratyrate
   rspec-rails (~> 4.0.0.beta2)
   rspec-support
   rubocop

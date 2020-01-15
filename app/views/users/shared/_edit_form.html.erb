@@ -48,7 +48,7 @@
   <% if resource.patient? %>
     <div>
       <%= f.label t("medical_record"), class:"left_float" %>
-      <%= f.file_field :file, accept: Settings.type_file_accept, class: "form-control upload_file" %>
+      <%= f.file_field :files, accept: Settings.type_file_accept, multiple: true, class: "form-control upload_file" %>
       <% if resource.files.attached? %>
         <% resource.files.each do |file| %>
           <%= link_to get_file_name(object, file), url_for(file), class: "space file_name" %>

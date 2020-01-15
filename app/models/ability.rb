@@ -17,6 +17,7 @@ class Ability
       can [:index, :update], Appointment
     when "Doctor"
       can :read, Comment
+      can :read, Patient
     when "Patient"
       can :create, Appointment
       can :manage, Comment, patient_id: user.id

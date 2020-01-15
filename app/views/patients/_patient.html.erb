@@ -7,12 +7,19 @@
   <td><%= patient.phone %></td>
   <td><%= patient.address %></td>
   <td>
+    <ul>
+      <% patient.appointments.each do |appointment| %>
+        <li><%= link_to appointment.doctor_full_name, doctor_schedules_path(appointment.doctor), data: {turbolinks: "false"} %></li>
+      <% end %>
+    </ul>
+  </td>
+  <td>
     <% if patient.files.attached? %>
       <% patient.files.each do |file| %>
         <%= link_to get_file_name(patient, file), url_for(file), class: "space file_name" %>
       <% end %>
     <% else %>
-      <h6><%= t "no_file" %></h6>
+      <h5><%= t "no_file" %></h5>
     <% end %>
   </td>
 </tr>
