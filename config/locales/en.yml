@@ -214,7 +214,7 @@ en:
   create_doctor_success: create doctor success
   create_doctor_not_success: create doctor not success
   create: Create
-  not_create_success: Not create success
+  not_create_success: create failed
   errors_blank: can't be blank
   errors_not_a_number: is not a number
   errors_taken: has already been taken
@@ -243,3 +243,15 @@ en:
   obituary: Obituary Tells Brutal  of Sister’s
   news: News
   rating: Thanks for using our service! Please rating for our doctor!
+  total: Total
+  add_news: Add news
+  news_not_found: News not found
+  create_new_success: Create news successfully!
+  content: Content
+  title: title
+  news_updated: News updated successfully!
+  update_failed: News update failed!
+  new_deleted: News deleted!
+  new_delete_failed: New delete failed!
+  edit_news: Edit
+  delete_news: Delete

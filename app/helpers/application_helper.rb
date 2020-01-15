@@ -25,4 +25,8 @@ module ApplicationHelper
 
     [:admin, object]
   end
+
+  def total_index_page total_item
+    total_item.size
+  end
 end

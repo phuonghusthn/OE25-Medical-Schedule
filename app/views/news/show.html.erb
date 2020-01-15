@@ -7,12 +7,13 @@
           <div class="blog_full_content">
             <% if @new.images.attached? %>
               <% @new.images.each do |image| %>
-                <div><%= image_tag image %></div>
+                <%= image_tag image, class: "news_img"%>
               <% end %>
             <% end %>
+            <br>
             <h4><%= @new.title %></h4>
             <div class="blog_meta">
-              <%= t("likes") %> <%= Settings.number_like %> | <%= t("comments") %> <%= Settings.number_comment %>
+              <%= t("comments") %> <%= Settings.number_comment %>
             </div>
             <%= @new.content %>
           </div>

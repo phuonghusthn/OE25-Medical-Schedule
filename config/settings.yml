@@ -17,6 +17,7 @@ type_file_accept: application/pdf, .doc, .docx
 app_pages: 10
 imgsize5: 5
 resize_to_limit: [200, 200]
+resize_news_image: [470, 301,5]
 image_accept: "image/jpeg,image/gif,image/png"
 awesome_icon: "https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 limit_day: 7

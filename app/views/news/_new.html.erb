@@ -1,9 +1,7 @@
 <div class="col-md-6">
   <div class="single_blog">
     <% if new.images.attached? %>
-      <% new.images.each do |image| %>
-      <div class="blog_img"><%= image_tag image %></div>
-      <% end %>
+      <div class="blog_img"><%= image_tag new.display_big_image.first, class: "news_img" %></div>
     <% end %>
     <div class="blog_content">
       <div class="blog_meta">
@@ -17,9 +15,17 @@
       </div>
       <h4><%= new.title %></h4>
       <p class="hiddent-content"><%= new.content %></p>
-      <%= link_to news_path(new.id), class: "read_btn" do %>
+      <%= link_to news_path(new.id), class: "btn custom_btn btn_size" do %>
         <%= t "know_more" %>
-        <i class="zmdi zmdi-pmmore lus"></i>
+        <i class="zmdi zmdi-plus"></i>
+      <% end %>
+      <% if current_user&.staff? %>
+        <%= link_to news_path(new.id), method: :delete, data: {confirm: t("are_you_sure_delete")}, class: "btn btn-danger btn_width right_float" do %>
+          <%= t "delete_news" %>
+        <% end %>
+        <%= link_to edit_news_path(new.id), class: "btn btn-primary btn_width right_float" do %>
+          <%= t "edit_news" %>
+        <% end %>
       <% end %>
     </div>
   </div>
