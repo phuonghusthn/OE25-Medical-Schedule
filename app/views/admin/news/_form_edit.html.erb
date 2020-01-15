@@ -1,0 +1,28 @@
+<%= form_for(@new, url: admin_news_path, html: { method: :patch }) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label t "staff" %>
+  <%= f.select :staff_id, staffs,
+    {}, class: "select-be height-input-second form-control space" %>
+
+  <%= f.label t("title") %>
+  <%= f.text_area :title, class: "form-control space" %>
+
+  <%= f.label t("content") %>
+  <%= f.text_area :content, class: "form-control space" %>
+
+  <div>
+      <%= f.label t("images"), class:"left_float" %>
+      <%= f.file_field :images, multiple: true, accept: Settings.image_accept, class: "form-control upload_image" %>
+      <% if @new.images.attached? %>
+        <% @new.images.each do |image| %>
+          <%= image_tag image, class: "image-size" %>
+        <% end %>
+      <% else %>
+        <h6><%= t "no_imgae" %></h6>
+      <% end %>
+  </div>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary space create_account btn-size" %>
+
+<% end %>

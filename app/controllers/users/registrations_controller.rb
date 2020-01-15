@@ -20,7 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def attach_file
-    return if resource.file.attach(params[:user][:file])
+    return if resource.files.attach(params[:user][:files])
 
     flash[:danger] = t "not_sucess"
     render :new

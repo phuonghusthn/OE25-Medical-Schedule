@@ -19,7 +19,7 @@ class Admin::PatientsController < Admin::BaseController
       @patient.attach_image params, :patient
     end
     flash[:success] = t "create_account_success"
-    redirect_to admin_staffs_path
+    redirect_to admin_patients_path
   rescue ActiveRecord::RecordInvalid
     flash[:danger] = t "not_success"
     render :new

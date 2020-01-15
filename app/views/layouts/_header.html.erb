@@ -58,6 +58,7 @@
                 <li><%= link_to t("admin_dashboard"), admin_dashboard_path %></li>
               <% end %>
               <li><%= link_to t("home"), home_path, data: {turbolinks: "false"} %></li>
+              <li><%= link_to t("news"), news_index_path, data: {turbolinks: "false"} %></li>
               <li><%= link_to t("appointment"), "#", data: {turbolinks: "false"} %>
                 <ul>
                   <% if can? :index, Appointment %>

@@ -1,0 +1,19 @@
+<%= form_for(@new, url: admin_news_index_path, html: { method: :post }) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label t "staff" %>
+  <%= f.select :staff_id, staffs,
+    {}, class: "select-be height-input-second form-control space" %>
+
+  <%= f.label t("title") %>
+  <%= f.text_area :title, class: "form-control space" %>
+
+  <%= f.label t("content") %>
+  <%= f.text_area :content, class: "form-control space" %>
+
+  <%= f.label t("images") %>
+  <%= f.file_field :images,  multiple: true, accept: Settings.image_accept, class: "form-control space upload_image" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary space create_account btn-size" %>
+
+<% end %>

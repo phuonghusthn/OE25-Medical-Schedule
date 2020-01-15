@@ -25,4 +25,8 @@ module ApplicationHelper
 
     [:admin, object]
   end
+
+  def staffs
+    Staff.pluck :full_name, :id
+  end
 end

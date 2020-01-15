@@ -1,9 +1,9 @@
 class DoctorsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :load_doctor, only: %i(show edit update)
-  before_action :correct_doctor, only: %i(edit update)
 
   load_and_authorize_resource
+  skip_authorize_resource only: %i(index show)
 
   def index
     @doctors = @q.result.order_by_name

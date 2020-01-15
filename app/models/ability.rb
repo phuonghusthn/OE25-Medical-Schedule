@@ -2,7 +2,6 @@ class Ability
   include CanCan::Ability
 
   def initialize user
-    can :read, Doctor
     can :new, Appointment
     return unless user
 
@@ -12,8 +11,9 @@ class Ability
     when "Admin"
       can :manage, :all
     when "Staff"
+      can [:update, :destroy], New
       can :update, Doctor
-      can :index, Patient
+      can [:show, :index], Patient
       can [:index, :update], Appointment
     when "Doctor"
       can :read, Comment

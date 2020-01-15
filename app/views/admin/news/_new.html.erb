@@ -1,0 +1,18 @@
+<tr>
+  <td class="centered no_content"><%= numbered params[:page], new_counter, Settings.per_page %></td>
+  <td class="fit_content">
+    <% if new.images.attached? %>
+      <% new.images.each do |image| %>
+        <%= image_tag image, class: "size-image-nice" %>
+      <% end %>
+    <% else %>
+      <h6><%= t "no_image" %></h6>
+    <% end %>
+  </td>
+  <td><%= new.title %></td>
+  <td><%= new.content %></td>
+  <td class="centered fit_content">
+    <%= link_to t("edit"), edit_admin_news_path(new), class: "btn btn-primary btn-size", method: :get %>
+    <%= link_to t("delete"),admin_news_path(new), method: :delete, data: {confirm: t("are_you_sure_delete")}, class: "btn btn-danger btn-size" %>
+  </td>
+</tr>

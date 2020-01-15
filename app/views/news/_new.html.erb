@@ -1,9 +1,7 @@
 <div class="col-md-6">
   <div class="single_blog">
     <% if new.images.attached? %>
-      <% new.images.each do |image| %>
-      <div class="blog_img"><%= image_tag image %></div>
-      <% end %>
+      <div class="blog_img"><%= image_tag new.images.first %></div>
     <% end %>
     <div class="blog_content">
       <div class="blog_meta">

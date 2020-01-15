@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       resources :admins
       resources :patients
       resources :doctors
+      resources :news
     end
   end
 end

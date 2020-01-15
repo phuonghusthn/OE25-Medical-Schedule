@@ -7,7 +7,7 @@
           <div class="blog_full_content">
             <% if @new.images.attached? %>
               <% @new.images.each do |image| %>
-                <div><%= image_tag image %></div>
+                <%= image_tag image, class: "image-size" %>
               <% end %>
             <% end %>
             <h4><%= @new.title %></h4>
